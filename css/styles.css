@@ -1,0 +1,93 @@
+body{
+  background: #ebebeb url('/img/fabric_1.png') repeat;
+  color: #333333;  
+}
+
+.container {
+  margin: 32px auto;
+  width: 940px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #333333;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #ffffff;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+
+a{
+  color: #0054ba;
+}
+
+a:hover{
+  color: #0099b8;
+  text-decoration: none;
+  }
+  
+ul {
+  list-style: none outside none;
+}
+
+ul, ol {
+  margin: 0;
+}
+
+li{
+  background-color: white;
+  font-size: 18px;
+  line-height: 31px;
+  padding: 16px;
+  margin-bottom: 16px;
+  -webkit-box-shadow: 0px 0px 3px 0px #bfbfbf;
+  -moz-box-shadow: 0px 0px 3px 0px #bfbfbf;
+  box-shadow: 0px 0px 3px 0px #bfbfbf;
+}
+
+li a em{
+  background: url('/img/checkbox.gif') no-repeat;
+  background-position: bottom left;
+  display: block;
+  float: left;
+  width: 36px;
+  height: 36px;
+  text-indent: -9999px;
+  margin-right: 14px;
+}
+
+li a.visited em{
+  background-position: top left;
+}
+
+li a.visited{
+  color:#719e00;
+}
+
+li a.visited:hover{
+  color: #0099b8;
+}
+
+li a:hover{
+  background: url('/img/external-link.gif') no-repeat right 4px;
+  padding-right: 22px;
+}
+
+
+
