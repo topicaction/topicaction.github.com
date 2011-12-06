@@ -51,7 +51,7 @@ $(document).ready(function(){
     if ($.cookie('idCookie')) {
       $.cookie('idCookie', $.cookie('idCookie') + "," + id);
     } else {
-      $.cookie('idCookie', id);
+      $.cookie('idCookie', id, {expires: 365});
     }
   }
 
