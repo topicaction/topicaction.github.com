@@ -84,10 +84,11 @@ li a.visited:hover{
   color: #0099b8;
 }
 
-li a:hover{
+#action-items li a:hover{
   background: url('/img/external-link.gif') no-repeat right 4px;
   padding-right: 22px;
 }
+
 
 
 

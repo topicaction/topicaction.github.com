@@ -65,7 +65,7 @@ $(document).ready(function(){
   if ($.cookie('idCookie')) {
     var idArray = $.cookie('idCookie').split(',');
     for (var x=0; x<idArray.length; x++) {
-      $('a[href="'+idArray[x]+'"]').visited();
+      $('#action-items a[href="'+idArray[x]+'"]').visited();
     }
     }
   }
