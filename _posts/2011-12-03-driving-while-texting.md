@@ -4,7 +4,7 @@ title: Driving while texting awareness
 description: Actions you can do today to increase driver safety and stop driving while texting.
 ---
 
-> Lorem
+ Lorem
 
 ## You can do this now:
 

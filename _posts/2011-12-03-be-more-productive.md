@@ -4,7 +4,7 @@ title: 5 money saving tips you can do right now
 description: Actions you can do today to save money.
 ---
 
-> Lorem
+ Lorem
 
 ## You can do this now:
 
