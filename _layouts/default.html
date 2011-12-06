@@ -30,7 +30,6 @@
     </div> <!-- /container -->
 
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 		<script type="text/javascript">
     var mpq = [];
@@ -42,6 +41,9 @@
     [f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links",
     "track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<
     d.length;c++){mpq[d[c]]=e(d[c])}})();
+
+
+		mpq.track_links();
 
 		</script>
 
@@ -59,15 +61,26 @@
 
 		</script>
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>		
+
 		<script>
+			$(function(){
+			
 			var domain_root = document.location.protocol+'//'+document.location.host;
 			var all_links = $('a').each(function(index,element){
 				if(element.href.substr(0,domain_root.length) !== domain_root)
 				{
 					element.target = '_blank';
 				}
-				});
-		</script>
+			});
+		});
+	</script>
+
+	<script>
+		var all_links = document.getElementsByTagName('a');
+    mpq.track_links(all_links, 'clicked link', {"a": "property"});
+
+	</script>
 
   </body>
 </html>
