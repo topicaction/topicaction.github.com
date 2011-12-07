@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/javascripts/visited_link.js"></script>
+		<script type="text/javascript" src="/javascripts/visited_link.js"></script>
   </head>
 
   <body>
@@ -38,15 +38,15 @@
     var mpq = [];
     mpq.push(["init", "36ce5f01b98cbe10137e1d222004401a"]);
     (function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";
-    b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+
+   b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+
     "//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];
     a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push(
     [f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links",
     "track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<
-    d.length;c++){mpq[d[c]]=e(d[c])}})();
+			d.length;c++){mpq[d[c]]=e(d[c])}})();
 
+		$( '#action-items a' ).attr( 'target', '_blank' );
 
-		mpq.track_links();
 
 		</script>
 
@@ -65,25 +65,5 @@
 		</script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>		
-
-		<script>
-			$(function(){
-			
-			var domain_root = document.location.protocol+'//'+document.location.host;
-			var all_links = $('a').each(function(index,element){
-				if(element.href.substr(0,domain_root.length) !== domain_root)
-				{
-					element.target = '_blank';
-				}
-			});
-		});
-	</script>
-
-	<script>
-		var all_links = document.getElementsByTagName('a');
-    mpq.track_links(all_links, 'clicked link', {"a": "property"});
-
-	</script>
-
   </body>
 </html>

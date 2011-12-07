@@ -40,9 +40,6 @@ $(document).ready(function(){
   };
   
 
-  //$("a").each(function(i, elt) {
-   // elt.attr("id", );
-  //})
   $.fn.visited = function() {
     this.addClass("visited")
   }
@@ -55,11 +52,13 @@ $(document).ready(function(){
     }
   }
 
-  $('a').click(function(e){
-    saveID($(this).attr('href'));
-    $(this).visited();
-  });
-  
+	$( '#action-items' ).on('click', 'a', function ( e ) {
+		var a = $(this);
+    mpq.track('clicked link', { url: a.attr("href") });
+		saveID(a.attr('href'));
+		a.visited();
+  } );
+
   var setVisited = function() {
   if ($.cookie('idCookie')) {
     var idArray = $.cookie('idCookie').split(',');
