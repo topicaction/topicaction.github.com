@@ -12,5 +12,4 @@ description: Actions you can do today to increase driver safety and stop driving
 * [_._ Take Oprah's Pledge](http://www.oprah.com/questionaire/ipledge.html?id=4)
 * [_._ Lobby for local laws](http://www.textfreedriving.org/)
 * Talk to your kids about driving while texting
-* If you're an employer, adopt an employee no-texting policy -- maybe "agree" here with no link
-* Spread the message about this to your friends
+* If you're an employer, adopt an employee no-texting policy
