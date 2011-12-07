@@ -9,7 +9,7 @@ description: Actions you can do today to help support Occupy Wall Street
 
 ## You can do this now:
 
-* [_._ Add a twibbon to your twitter picture Add a twibbon to your twitter picture Add a twibbon to your twitter picture Add a twibbon to your twitter picture Add a twibbon to your twitter picture](http://twibbon.com/join/i-support-occupy-wall-st)
+* [_._ Add a twibbon to your twitter picture](http://twibbon.com/join/i-support-occupy-wall-st)
 * [_._ Move your money from a big bank to a credit union](http://moveyourmoneyproject.org/find-bankcredit-union)
 * [_._ Send unsolicited credit card offers back to the banks](http://www.youtube.com/watch?v=2JlxbKtBkGM&feature=youtu.be)
 * [_._ Donate to Occupy Wall Street](]http://occupywallst.org/donate/)
