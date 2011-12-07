@@ -56,7 +56,6 @@ $(document).ready(function(){
   }
 
   $('a').click(function(e){
-    console.log($(this).attr("href"));
     saveID($(this).attr('href'));
     $(this).visited();
   });
