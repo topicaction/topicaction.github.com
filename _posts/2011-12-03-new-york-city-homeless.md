@@ -1,6 +1,6 @@
 ---
 layout: topic
-title: Hunger in New York City
+title: 5 things to help the homeless in New York City
 description: Actions you can do today to help combat homelessness in New York City
 ---
 
