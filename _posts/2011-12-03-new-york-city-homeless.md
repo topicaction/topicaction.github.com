@@ -8,6 +8,8 @@ description: Actions you can do today to help combat homelessness in New York Ci
 
 ## You can do this now:
 
-* [_._ Write a letter to Mayor Bloomberg to set aside housing for homeless children](http://www.coalitionforthehomeless.org/page/speakout/one-in-three-solution?js=false)
+* [_._ Volunteer at a soup kitchen](http://www.foodbanknyc.org/how-you-can-help/volunteer)
 * [_._ Plan a food drive](http://www.cityharvest.org/donate-food/donation-drives)
 * [_._ Donate a virtual can](https://www.nyccah.org/civicrm/contribute/transact?reset=1&id=7)
+* [_._ Write a letter to Mayor Bloomberg to set aside housing for homeless children](http://www.coalitionforthehomeless.org/page/speakout/one-in-three-solution?js=false)
+* [_._ Offer leftover food from a catered event to a nearby shelter](http://g.co/maps/97hzf)
