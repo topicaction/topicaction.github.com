@@ -3,12 +3,16 @@ function setCohortAndBodyClass() {
 
   var cohorts = [
     {
-      className:  'cohort-1',
-      displayName: 'Cohort One'
+      className:  'social-buttons',
+      displayName: 'Social buttons'
     },
     {
-      className: 'cohort-2',
-      displayName: 'Cohort Two'
+      className: 'popularity',
+      displayName: 'Popularity'
+    },
+    {
+      className: 'relevancy',
+      displayName: 'Relevancy'
     }
   ];
 
