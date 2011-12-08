@@ -91,10 +91,31 @@ li a.visited:hover {
 
 
 #fb-like-button { display:none; }
-#fb-like-button .bucket-1 { display:block; }
+.bucket-1 #fb-like-button { display:block; }
 
 #action-items strong { display:none; }
-.bucket-2 #action-items strong { display:inline-block; }
+.bucket-2 #action-items strong { 
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 4px;
+}
+.bucket-2 #action-items strong em{
+  font-weight: bold;
+  font-style: normal;
+  color: #333333;
+} 
 
 #action-items code { display:none; }
-.bucket-3 #action-items code { display:inline-block; }
+.bucket-3 #action-items em {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+}
+.bucket-3 #action-items em strong{
+  font-weight: bold;
+  font-style: normal;
+  color: #333333;
+  display: inline-block;
+}
