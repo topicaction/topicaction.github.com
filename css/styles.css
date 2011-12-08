@@ -40,15 +40,49 @@ a{
 a:hover{
   color: #0099b8;
   text-decoration: none;
-  }
-  
-ul {
+}  
+
+#action-items em { display:none; }
+#action-items strong { display:none; }
+
+#social-buttons { display:none; }
+.social-buttons #social-buttons { display:block; }
+
+.popularity #action-items strong { 
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 4px;
+}
+.popularity #action-items strong em{
+	display: inline-block;
+	font-weight: bold;
+  font-style: normal;
+  color: #333333;
+} 
+
+.relevancy #action-items em {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+}
+.relevancy #action-items em strong{
+	font-weight: bold;
+  font-style: normal;
+  color: #333333;
+  display: inline-block;
+}	
+		
+	
+	ul {
   list-style: none outside none;
 }
 
 ul, ol {
   margin: 0;
 }
+
 
 li{
   background-color: white;
@@ -61,7 +95,7 @@ li{
   box-shadow: 0px 0px 3px 0px #bfbfbf;
 }
 
-li a em{
+#action-items li a em{
   background: url('/img/checkbox.gif') no-repeat;
   background-position: bottom left;
   display: block;
@@ -72,15 +106,15 @@ li a em{
   margin-right: 14px;
 }
 
-li a.visited em{
+#action-items li a.visited em{
   background-position: top left;
 }
 
-li a.visited{
+#action-items li a.visited{
   color:#719e00;
 }
 
-li a.visited:hover { 
+#action-items li a.visited:hover { 
   color: #0099b8;
 }
 
@@ -89,33 +123,3 @@ li a.visited:hover {
   padding-right: 22px;
 }
 
-
-#fb-like-button { display:none; }
-.bucket-1 #fb-like-button { display:block; }
-
-#action-items strong { display:none; }
-.bucket-2 #action-items strong { 
-  display: block;
-  font-size: 14px;
-  font-weight: normal;
-  margin-top: 4px;
-}
-.bucket-2 #action-items strong em{
-  font-weight: bold;
-  font-style: normal;
-  color: #333333;
-} 
-
-#action-items code { display:none; }
-.bucket-3 #action-items em {
-  display: block;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-}
-.bucket-3 #action-items em strong{
-  font-weight: bold;
-  font-style: normal;
-  color: #333333;
-  display: inline-block;
-}
