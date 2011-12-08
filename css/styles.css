@@ -47,6 +47,11 @@ a:hover{
 
 #social-buttons { display:none; }
 .social-buttons #social-buttons { display:block; }
+#social-buttons h2{
+  color: #990032;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
 
 .popularity #action-items strong { 
   display: block;
