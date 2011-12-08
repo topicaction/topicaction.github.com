@@ -19,8 +19,6 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script type="text/javascript" src="/javascripts/visited_link.js"></script>
   </head>
 
   <body>
@@ -32,9 +30,22 @@
 
     </div> <!-- /container -->
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/javascripts/amplify.min.js"></script>
 		{% include facebook.html %}
 		{% include ga.html %}
 		{% include mixpanel.html %}
 
-	  </body>
+		<script type="text/javascript" src="/javascripts/visited_link.js"></script>
+		<script type="text/javascript" src="/javascripts/set-cohort.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		  $(function() {
+		    // Register all dom ready triggers here
+        $( '#action-items a' ).attr( 'target', '_blank' );
+
+        setCohortAndBodyClass();
+
+		  });
+		</script>
+  </body>
 </html>
