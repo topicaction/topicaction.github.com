@@ -1,5 +1,5 @@
 function setCohortAndBodyClass() {
-  var cohortKey = 'cohort-test-12152011';
+  var cohortKey = 'topicaction-12082011';
 
   var cohorts = [
     {
@@ -12,8 +12,6 @@ function setCohortAndBodyClass() {
     }
   ];
 
-  // for testing
-  amplify.store(cohortKey, null);
   var cohort;
   var cohortName = amplify.store(cohortKey);
 
@@ -28,6 +26,8 @@ function setCohortAndBodyClass() {
 
     amplify.store(cohortKey, cohortName);
     // mpq.register_once('cohort', cohortName);
+
+
   } else {
     // search for cohort
     $.each(cohorts, function(i, coh) {
@@ -36,6 +36,8 @@ function setCohortAndBodyClass() {
       }
     });
   }
+
+  mpq.register({ 'cohort' : cohortName });
 
   $('body').addClass(cohort.className);
 }
