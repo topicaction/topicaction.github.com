@@ -3,9 +3,13 @@ body{
   color: #333333;
 }
 
-.container {
+.container,
+.top-bar {
   margin: 32px auto;
   width: 940px;
+}
+.top-bar {
+  margin: 12px auto;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -128,3 +132,4 @@ li{
   padding-right: 22px;
 }
 
+#act-now { display:none; }

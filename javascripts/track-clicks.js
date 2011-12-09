@@ -1,10 +1,22 @@
-// onclick
-
-
-// make all links colored
-
-// assign saveID()
 (function(){
+
+  $.fn.trackClicks = function(mixpanel) {
+    setVisitedLinks(this);
+
+  	return this.on('click', 'a', function ( e ) {
+  		var a = $(this);
+      // onclick
+      // make all links colored
+      // assign saveID()
+      mixpanel.track('clicked link', { url: a.attr("href") });
+  		saveID(a.attr('href'));
+  		a.visited();
+    });
+  };
+
+  $.fn.visited = function() {
+    return this.addClass('visited');
+  };
 
   var saveID = function(id) {
     if ($.cookie('idCookie')) {
@@ -23,20 +35,5 @@
       }
     }
   };
-
-  $.fn.visited = function() {
-    return this.addClass('visited');
-  };
-
-  $.fn.trackClicks = function(mixpanel) {
-    setVisitedLinks(this);
-
-  	return this.on('click', 'a', function ( e ) {
-  		var a = $(this);
-      mixpanel.track('clicked link', { url: a.attr("href") });
-  		saveID(a.attr('href'));
-  		a.visited();
-    });
-  }
 
 })();

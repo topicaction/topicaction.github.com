@@ -8,3 +8,11 @@ TA.Env = {
     return !!window.location.search.match(/refresh/);
   }
 };
+
+TA.Console = {
+  log: function() {
+    if (!TA.Env.test()) return;
+
+    console.log.apply(console, arguments);
+  }
+};
