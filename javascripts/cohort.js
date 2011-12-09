@@ -30,7 +30,11 @@
       {
         className: 'relevancy',
         displayName: 'Relevancy'
-      }
+      },
+			{
+				className: 'add-action',
+				displayName: 'Add Action'
+			}
     ];
   }
 

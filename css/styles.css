@@ -82,6 +82,9 @@ a:hover{
 #add-action {
 	display: none;
 }
+.add-action #add-action {
+	display: block;
+}
 	
 ul {
   list-style: none outside none;
