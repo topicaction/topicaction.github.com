@@ -4,7 +4,7 @@ title: Stop Bullying
 description: Actions you can do today to help stop bullying
 ---
 
-Bullying can take many forms: in person, via text message, on the web. Help stop bullying by learning how to protect yourself and helping others understand that bullying is a serious problem.
+Bullying can take many forms: in person, via text message, on the web. Help stop bullying: learn how to protect yourself, and help others understand that bullying is a serious problem.
 
 
 ## You can do this now:
