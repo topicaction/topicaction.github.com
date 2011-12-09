@@ -35,16 +35,24 @@
 		{% include facebook.html %}
 		{% include ga.html %}
 		{% include mixpanel.html %}
+		<script type="text/javascript" src="/javascripts/environment.js"></script>
+		<script type="text/javascript" src="/javascripts/cookie.js"></script>
+		<script type="text/javascript" src="/javascripts/mixpanel.js"></script>
+		<script type="text/javascript" src="/javascripts/cohort.js"></script>
+		<script type="text/javascript" src="/javascripts/visited-link.js"></script>
 
-		<script type="text/javascript" src="/javascripts/visited_link.js"></script>
-		<script type="text/javascript" src="/javascripts/set-cohort.js"></script>
 		<script type="text/javascript" charset="utf-8">
+		  TA.mixpanel = new TA.Mixpanel(mpq);
+      TA.cohort   = TA.getCohortFromStorage();
+
+      TA.mixpanel.registerCohort(TA.cohort);
+      TA.mixpanel.trackPageView();
+
 		  $(function() {
-		    // Register all dom ready triggers here
-        $( '#action-items a' ).attr( 'target', '_blank' );
-
-        setCohortAndBodyClass();
-
+		    // Register dom ready triggers here
+		    $('#action-items').trackClicks(TA.mixpanel);
+        $('#action-items a').attr('target', '_blank');
+        $('body').addClass(TA.cohort.className);
 		  });
 		</script>
   </body>
