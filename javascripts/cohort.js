@@ -1,8 +1,49 @@
 (function() {
-  TA.CohortData = [];
+  // Define cohort model
+  TA.Cohort = Backbone.Model;
+
+  // Define cohort collection class
+  TA.CohortCollection = Backbone.Collection.extend({
+    model: TA.Cohort,
+
+    storageKey: 'topicaction-12082011',
+
+    findRandom: function() {
+      return this.at(Math.floor(Math.random() * this.length));
+    },
+
+    findByDisplayName: function(displayName) {
+      if (!displayName) return null;
+
+      return this.find(function(cohort) { return cohort.get("displayName") == displayName; });
+    },
+
+    assignNewCohort: function(displayName) {
+      var self   = this;
+      var cohort = self.findRandom();
+      amplify.store(self.storageKey, cohort.get("displayName"));
+      return cohort;
+    },
+
+    retrieveOrAssignCohort: function() {
+      var self        = this;
+      var cohortName  = amplify.store(self.storageKey);
+      var cohort      = self.findByDisplayName(cohortName);
+
+      if (!cohort || TA.Env.refresh()) {
+        return self.assignNewCohort(cohortName);
+      } else {
+        return cohort;
+      }
+    }
+  });
+
+  // Create collection for application
+  TA.Cohorts = new TA.CohortCollection;
 
   if (TA.Env.test()) {
-    TA.CohortData = [
+    // Add cohort members for test environment
+    TA.Cohorts.add([
       {
         className:  'testing-1',
         displayName: 'Testing 1'
@@ -11,10 +52,11 @@
         className:  'testing-2',
         displayName: 'Testing 2'
       }
-    ];
+    ]);
 
   } else {
-    TA.CohortData = [
+    // Add cohort members for production environment
+    TA.Cohorts.add([
       {
         className:  'control-group',
         displayName: 'Control Group'
@@ -31,41 +73,7 @@
         className: 'relevancy',
         displayName: 'Relevancy'
       }
-    ];
+    ]);
   }
-
-  TA.detectCohort = function(cohortName, cohorts) {
-    if (cohortName == null) return null;
-    var cohort;
-
-    $.each(cohorts, function(i, coh) {
-      if (cohortName == coh.displayName) {
-        cohort = coh;
-      }
-    });
-
-    return cohort;
-  };
-
-  TA.randomlySelectNewCohort = function(cohorts) {
-    var cohortIndex = Math.floor(Math.random() * cohorts.length);
-    return cohorts[cohortIndex];
-  };
-
-  TA.getCohortFromStorage = function(opts) {
-    opts = opts || {};
-
-    var cohortKey   = 'topicaction-12082011';
-    var cohortName  = amplify.store(cohortKey);
-    var cohorts     = TA.CohortData;
-    var cohort      = TA.detectCohort(cohortName, cohorts);
-
-    if (!cohort || TA.Env.refresh()) {
-      cohort = TA.randomlySelectNewCohort(cohorts);
-      amplify.store(cohortKey, cohort.displayName);
-    }
-
-    return cohort;
-  };
 
 })();

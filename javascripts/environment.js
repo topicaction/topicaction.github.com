@@ -5,6 +5,6 @@ TA.Env = {
     return !!window.location.host.match(/localhost/);
   },
   refresh: function() {
-    return window.location.search.match(/refresh/);
+    return !!window.location.search.match(/refresh/);
   }
 };

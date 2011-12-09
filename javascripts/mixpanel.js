@@ -2,9 +2,13 @@ TA.Mixpanel = function(mpq) {
   this.mpq = mpq;
 };
 
+TA.Mixpanel.create = function(mpq) {
+  return new TA.Mixpanel(mpq);
+};
+
 TA.Mixpanel.prototype = {
   registerCohort: function(cohort) {
-    this.mpq.register({ 'cohort' : cohort.displayName });
+    this.mpq.register({ 'cohort' : cohort.get("displayName") });
   },
 
   trackPageView: function() {

@@ -15,7 +15,7 @@
   };
 
   var setVisitedLinks = function(scope) {
-    var $scope = scope;
+    var $scope = $(scope);
     if ($.cookie('idCookie')) {
       var idArray = $.cookie('idCookie').split(',');
       for (var x=0; x<idArray.length; x++) {
