@@ -79,8 +79,11 @@ a:hover{
   display: inline-block;
 }
 
-
-	ul {
+#add-action {
+	display: none;
+}
+	
+ul {
   list-style: none outside none;
 }
 

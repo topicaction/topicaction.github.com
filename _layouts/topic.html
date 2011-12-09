@@ -5,10 +5,15 @@ layout: default
 
 <div id="action-items">
 	{{ content }}
+<div id="add-action">
+<ul><li><button class="btn primary large" onclick="mpq.track('clicked add action', {'page name' : document.title, 'url' : window.location.pathname}); window.open('http://challengepost.wufoo.com/forms/z7x1x7/',  null, 'height=497, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" >Add an action to the list</button></li></ul>
+</div>
+
 </div>
 
 <div id="social-buttons">
 	<h2>Share this action list with your friends</h2>
 	<div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
 </div>
+
 
