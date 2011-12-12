@@ -55,12 +55,10 @@
       TA.user.mixpanel.trackPageView();
 
 		  $(function() {
-        new TA.ActionRouter();
-        Backbone.history.start();
+        TA.ActionRouter.start();
 
 		    // Register dom ready triggers here
         $('#action-items').trackClicks(TA.user.mixpanel);
-        $('#action-items a').attr('target', '_blank');
         $('body').addClass(TA.user.cohort.get("className"));
 		  });
 		</script>

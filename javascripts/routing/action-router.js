@@ -29,6 +29,13 @@
       return self._view;
     }
 
+  }, {
+
+    start: function() {
+      new this;
+      Backbone.history.start();
+    }
+
   });
 
 })();
