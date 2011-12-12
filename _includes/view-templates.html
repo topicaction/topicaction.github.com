@@ -1,8 +1,17 @@
 <script id='act-now-view' type="text/template" charset="utf-8">
-  <div class="content top-bar">
-    <div class="right">
-      <a class='view-index' href="#">See more actions</a>
+  <div class="topbar-wrapper">
+    <div class="topbar content">
+      <div class="topbar-inner">
+        <div class="container">
+          <h3><a href="#">Act Now</a></h3>
+          <ul class="nav">
+            <li><a class='view-index btn small primary' href="#">See more actions</a></li>
+          </ul>
+          <div class="action-title absolute alert-message warning small" style='top:40px;'>
+            <p><%= action.get("title") %></p>
+          </div>
+        </div>
+      </div>
     </div>
-    <h2>Act Now: <%= action.get("title") %></h2>
   </div>
 </script>

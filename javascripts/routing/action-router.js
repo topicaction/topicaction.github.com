@@ -14,7 +14,7 @@
 
       TA.Console.log("routed to show", action);
       indexView.fadeOut(function() {
-        var actionView = new TA.ActNowView({ model: action, id: 'act-now' });
+        var actionView = new TA.ActionShowView({ model: action, id: 'act-now' });
         actionView.displayAfter(indexView.el);
       });
     },
@@ -25,7 +25,7 @@
 
     view: function() {
       var self = this;
-      if (!self._view) self._view = new TA.TopicActionsView;
+      if (!self._view) self._view = new TA.ActionIndexView;
       return self._view;
     }
 

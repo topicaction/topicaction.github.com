@@ -1,15 +1,15 @@
+/*Framework*/
+.absolute { position: absolute; }
+
+/* Elements */
 body{
   background: #ebebeb url('/img/fabric_1.png') repeat;
   color: #333333;
 }
 
-.container,
-.top-bar {
+#topic .container {
   margin: 32px auto;
   width: 940px;
-}
-.top-bar {
-  margin: 12px auto;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -46,8 +46,55 @@ a:hover{
   text-decoration: none;
 }
 
+ul {
+  list-style: none outside none;
+}
+
+ul, ol {
+  margin: 0;
+}
+
+#action-items li {
+  background-color: white;
+  font-size: 18px;
+  line-height: 31px;
+  padding: 16px;
+  margin-bottom: 16px;
+  -webkit-box-shadow: 0px 0px 3px 0px #bfbfbf;
+  -moz-box-shadow: 0px 0px 3px 0px #bfbfbf;
+  box-shadow: 0px 0px 3px 0px #bfbfbf;
+}
+
 #action-items em { display:none; }
 #action-items strong { display:none; }
+
+#action-items li a em{
+  background: url('/img/checkbox.gif') no-repeat;
+  background-position: bottom left;
+  display: block;
+  float: left;
+  width: 36px;
+  height: 36px;
+  text-indent: -9999px;
+  margin-right: 14px;
+}
+
+#action-items li a.visited em{
+  background-position: top left;
+}
+
+#action-items li a.visited{
+  color:#719e00;
+}
+
+#action-items li a.visited:hover {
+  color: #0099b8;
+}
+
+#action-items li a:hover {
+  background: url('/img/external-link.gif') no-repeat right 4px;
+  padding-right: 22px;
+}
 
 #social-buttons { display:none; }
 .social-buttons #social-buttons { display:block; }
@@ -83,53 +130,11 @@ a:hover{
   display: inline-block;
 }
 
-
-	ul {
-  list-style: none outside none;
+#act-now {
+  display:none;
+  padding-top:40px;
 }
 
-ul, ol {
-  margin: 0;
-}
-
-
-li{
-  background-color: white;
-  font-size: 18px;
-  line-height: 31px;
-  padding: 16px;
-  margin-bottom: 16px;
-  -webkit-box-shadow: 0px 0px 3px 0px #bfbfbf;
-  -moz-box-shadow: 0px 0px 3px 0px #bfbfbf;
-  box-shadow: 0px 0px 3px 0px #bfbfbf;
-}
-
-#action-items li a em{
-  background: url('/img/checkbox.gif') no-repeat;
-  background-position: bottom left;
-  display: block;
-  float: left;
-  width: 36px;
-  height: 36px;
-  text-indent: -9999px;
-  margin-right: 14px;
-}
-
-#action-items li a.visited em{
-  background-position: top left;
-}
-
-#action-items li a.visited{
-  color:#719e00;
-}
-
-#action-items li a.visited:hover {
-  color: #0099b8;
-}
-
-#action-items li a:hover {
-  background: url('/img/external-link.gif') no-repeat right 4px;
-  padding-right: 22px;
-}
-
-#act-now { display:none; }
+.nav .btn.small { padding: 4px 7px 4px; }
+.alert-message.small { padding:3px; }
+.alert-message.small p { font-size:11px; line-height:1.2em; }

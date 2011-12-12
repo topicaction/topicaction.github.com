@@ -1,6 +1,6 @@
 (function() {
 
-  TA.TopicActionsView = Backbone.View.extend({
+  TA.ActionIndexView = Backbone.View.extend({
     initialize: function() {
       var self = this;
       _.bindAll(self, "render", "fadeIn", "fadeOut");
@@ -34,7 +34,7 @@
     }
   });
 
-  TA.ActNowView = Backbone.View.extend({
+  TA.ActionShowView = Backbone.View.extend({
     initialize: function() {
       var self = this;
       _.bindAll(self, "render", "remove");
@@ -43,11 +43,6 @@
 
     events: {
       "click a.view-index" : "remove"
-    },
-
-    back: function() {
-      this.remove();
-      return false;
     },
 
     render: function() {
@@ -79,6 +74,10 @@
       $iframe.attr("src", url);
       $iframe.width("100%");
       $iframe.height($(window).height() - height);
+      $iframe.attr({
+        "frameborder":"0",
+        "noresize":"noresize"
+      });
       return $iframe;
     },
 
