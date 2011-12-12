@@ -25,7 +25,7 @@
       return cohort;
     },
 
-    retrieveOrAssignCohort: function() {
+    findOrAssignCohort: function() {
       var self        = this;
       var cohortName  = amplify.store(self.storageKey);
       var cohort      = self.findByDisplayName(cohortName);

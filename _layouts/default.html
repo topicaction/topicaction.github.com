@@ -27,7 +27,6 @@
 				{{ content }}
 	    </div>
     </div> <!-- /container -->
-    <div id="act-now"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/javascripts/vendor/underscore.min.js"></script>
@@ -48,8 +47,8 @@
 
 		<script type="text/javascript" charset="utf-8">
 		  TA.user     = {
-		    mixpanel: TA.Mixpanel.create(mpq),
-        cohort  : TA.Cohorts.retrieveOrAssignCohort()
+        mixpanel: TA.Mixpanel.create(mpq),
+        cohort  : TA.Cohorts.findOrAssignCohort()
 		  };
 
       TA.user.mixpanel.registerCohort(TA.user.cohort);
@@ -60,7 +59,7 @@
         Backbone.history.start();
 
 		    // Register dom ready triggers here
-		    $('#action-items').trackClicks(TA.user.mixpanel);
+        // $('#action-items').trackClicks(TA.user.mixpanel);
         // $('#action-items a').attr('target', '_blank');
         $('body').addClass(TA.user.cohort.get("className"));
 		  });

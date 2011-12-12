@@ -1,21 +1,32 @@
 (function() {
+
   TA.ActionRouter = Backbone.Router.extend({
 
     routes: {
-      "/"                   : "show-topic",
-      "act-now/:actionParam": "actNow"
+      ""                    : "index",
+      "act-now/:actionParam": "show"
     },
 
-    foobar: function() {
-      TA.Console.log("routed to foo", this);
-    },
+    show: function(actionParam) {
+      var self = this;
+      var action = TA.Actions.findByParam(actionParam);
+      var indexView = self.view();
 
-    actNow: function(actionParam) {
-      var action = TA.Actions.findByParam(actionParam)
-      TA.Console.log("routed to act-now", action);
-      $("#topic .content").slideUp('slow', function() {
-        new TA.ActNowView({model: action}).render();
+      TA.Console.log("routed to show", action);
+      indexView.fadeOut(function() {
+        var actionView = new TA.ActNowView({ model: action, id: 'act-now' });
+        actionView.displayAfter(indexView.el);
       });
+    },
+
+    index: function() {
+      this.view().fadeIn();
+    },
+
+    view: function() {
+      var self = this;
+      if (!self._view) self._view = new TA.TopicActionsView;
+      return self._view;
     }
 
   });

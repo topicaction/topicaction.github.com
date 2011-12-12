@@ -1,10 +1,6 @@
 (function() {
   TA.Topic = Backbone.Model;
 
-  TA.TopicCollection = Backbone.Collection.extend({
-    model: TA.Topic
-  });
-
   TA.Topics = new TA.TopicCollection;
 
   TA.Topics.add([
