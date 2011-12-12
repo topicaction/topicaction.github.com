@@ -130,6 +130,13 @@ ul, ol {
   display: inline-block;
 }
 
+#add-action {
+	display: none;
+}
+.add-action #add-action {
+	display: block;
+}
+
 #act-now {
   display:none;
   padding-top:40px;

@@ -38,11 +38,11 @@
     }
   });
 
-  // Create collection for application
+  // Create global cohort collection instance for application
   TA.Cohorts = new TA.CohortCollection;
 
+  // Add cohort members by environment
   if (TA.Env.test()) {
-    // Add cohort members for test environment
     TA.Cohorts.add([
       {
         className:  'testing-1',
@@ -55,7 +55,6 @@
     ]);
 
   } else {
-    // Add cohort members for production environment
     TA.Cohorts.add([
       {
         className:  'control-group',
@@ -72,6 +71,10 @@
       {
         className: 'relevancy',
         displayName: 'Relevancy'
+      },
+      {
+      	className: 'add-action',
+      	displayName: 'Add Action'
       }
     ]);
   }
