@@ -16,6 +16,7 @@ TA.Mixpanel.prototype = {
   },
 
   track: function(eventName, options) {
+    TA.Console.log('mixpanel.track', eventName, options);
     this.mpq.track(eventName, options);
   }
 };

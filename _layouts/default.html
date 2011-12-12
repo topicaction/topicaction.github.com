@@ -39,7 +39,8 @@
 		<script type="text/javascript" src="/javascripts/environment.js"></script>
 		<script type="text/javascript" src="/javascripts/cookie.js"></script>
 		<script type="text/javascript" src="/javascripts/mixpanel.js"></script>
-		<script type="text/javascript" src="/javascripts/track-clicks.js"></script>
+		<script type="text/javascript" src="/javascripts/plugins/jquery.track-clicks.js"></script>
+		<script type="text/javascript" src="/javascripts/plugins/jquery.add-action.js"></script>
 		<script type="text/javascript" src="/javascripts/models/cohort.js"></script>
 		<script type="text/javascript" src="/javascripts/models/action.js"></script>
 		<script type="text/javascript" src="/javascripts/routing/action-router.js"></script>
@@ -58,7 +59,8 @@
         TA.ActionRouter.start();
 
 		    // Register dom ready triggers here
-        $('#action-items').trackClicks(TA.user.mixpanel);
+        $('#action-items').trackClicks({ mixpanel: TA.user.mixpanel });
+        $('button.add-action').addAction({ mixpanel: TA.user.mixpanel });
         $('body').addClass(TA.user.cohort.get("className"));
 		  });
 		</script>

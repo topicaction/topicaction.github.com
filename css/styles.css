@@ -1,5 +1,6 @@
 /*Framework*/
 .absolute { position: absolute; }
+.right { float:right;}
 
 /* Elements */
 body{
@@ -142,6 +143,7 @@ ul, ol {
   padding-top:40px;
 }
 
-.nav .btn.small { padding: 4px 7px 4px; }
-.alert-message.small { padding:3px; }
-.alert-message.small p { font-size:11px; line-height:1.2em; }
+.topbar a { color:#0054BA; text-shadow:none; }
+.nav li { padding-left:5px; }
+.nav p { color: white; text-shadow: none; }
+.nav .btn.small { padding: 4px 7px 4px; margin-top:5px; }

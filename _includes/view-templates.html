@@ -5,11 +5,12 @@
         <div class="container">
           <h3><a href="#">Act Now</a></h3>
           <ul class="nav">
-            <li><a class='view-index btn small primary' href="#">See more actions</a></li>
+            <li>
+              <p><%= action.get("title") %></p>
+            </li>
+            <li><a class='view-index btn small primary' href="#">I've done this</a></li>
+            <li><a class='view-index btn small' href="#">Save for Later</a></li>
           </ul>
-          <div class="action-title absolute alert-message warning small" style='top:40px;'>
-            <p><%= action.get("title") %></p>
-          </div>
         </div>
       </div>
     </div>
