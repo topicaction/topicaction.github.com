@@ -42,7 +42,7 @@
   TA.Cohorts = new TA.CohortCollection;
 
   // Add cohort members by environment
-  if (TA.Env.test()) {
+  if (!TA.Env.test()) {
     TA.Cohorts.add([
       {
         className:  'testing-1',
@@ -55,28 +55,49 @@
     ]);
 
   } else {
-    TA.Cohorts.add([
-      {
-        className:  'control-group',
-        displayName: 'Control Group'
-      },
-      {
-        className:  'social-buttons',
-        displayName: 'Social buttons'
-      },
-      {
-        className: 'popularity',
-        displayName: 'Popularity'
-      },
-      {
-        className: 'relevancy',
-        displayName: 'Relevancy'
-      },
-      {
-      	className: 'add-action',
-      	displayName: 'Add Action'
-      }
-    ]);
+    switch(TA.Cohorts.storageKey) {
+      case 'topicaction-12082011':
+        TA.Cohorts.add([
+          {
+            className:  'control-group',
+            displayName: 'Control Group'
+          },
+          {
+            className:  'social-buttons',
+            displayName: 'Social buttons'
+          },
+          {
+            className: 'popularity',
+            displayName: 'Popularity'
+          },
+          {
+            className: 'relevancy',
+            displayName: 'Relevancy'
+          },
+          {
+            className: 'add-action',
+            displayName: 'Add Action'
+          }
+        ]);
+        break;
+
+      case 'topicaction-12122011':
+        TA.Cohorts.add([
+          {
+            className:  'control-group',
+            displayName: 'Control Group'
+          },
+          {
+            className: 'done-this',
+            displayName: 'Done this'
+          },
+          {
+            className: 'save-for-later',
+            displayName: 'Save for Later'
+          }
+        ]);
+      break;
+    }
   }
 
 })();
