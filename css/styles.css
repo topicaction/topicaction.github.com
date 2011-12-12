@@ -55,7 +55,7 @@ ul, ol {
   margin: 0;
 }
 
-#action-items li {
+.action-list li {
   background-color: white;
   font-size: 18px;
   line-height: 31px;

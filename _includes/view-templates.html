@@ -1,4 +1,4 @@
-<script id='act-now-view' type="text/template" charset="utf-8">
+<script id='act-now-template' type="text/template" charset="utf-8">
   <div class="topbar-wrapper">
     <div class="topbar content">
       <div class="topbar-inner">
@@ -6,13 +6,20 @@
           <h3><a href="#">Act Now</a></h3>
           <ul class="nav">
             <li>
-              <p><%= action.get("title") %></p>
+              <p><%= title %></p>
             </li>
-            <li><a class='view-index btn small primary' href="#">I've done this</a></li>
-            <li><a class='view-index btn small' href="#">Save for Later</a></li>
+            <li><a class='view-index btn small primary' href="#">I have done this</a></li>
+            <li><a class='add-action btn small' href="#add-action">Save for Later</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+</script>
+<script id='action-li-template' type="text/template" charset="utf-8">
+  <ul>
+    <li>
+      <a href="http://vimeo.com/31100268" class="visited"><em>.</em> Watch a short video to learn more</a> <strong><em>83</em> people did this</strong> <em><strong>4.6</strong> relevancy</em>
+    </li>
+  </ul>
 </script>

@@ -1,7 +1,18 @@
 (function() {
 
+  // _.templateSettings = {
+  //   evaluate    : /<%([\s\S]+?)%>/g,
+  //   interpolate : /<%=([\s\S]+?)%>/g,
+  //   escape      : /<%-([\s\S]+?)%>/g
+  // };
+  // _.templateSettings = {
+  //   evaluate    : /\{%([\s\S]+?)%\}/g,
+  //   interpolate : /\{\{([\s\S]+?)\}\}/g,
+  //   escape      : /\{-([\s\S]+?)-\}/g
+  // };
+
   TA.ActionIndexView = Backbone.View.extend({
-    initialize: function() {
+    initialize: function(options) {
       var self = this;
       _.bindAll(self, "render", "fadeIn", "fadeOut");
       self.render();
@@ -35,21 +46,23 @@
   });
 
   TA.ActionShowView = Backbone.View.extend({
-    initialize: function() {
+    initialize: function(options) {
       var self = this;
-      _.bindAll(self, "render", "remove");
+      self.options = options || {};
+      _.bindAll(self, "render", "remove", "newAction");
       self.render();
     },
 
     events: {
-      "click a.view-index" : "remove"
+      "click a.view-index" : "remove",
+      "click a.add-action" : "newAction"
     },
 
     render: function() {
       var self      = this;
       var $el       = $(self.el);
-      var template  = _.template($('#act-now-view').html());
-      var $viewHtml = template({ action: self.model });
+      var template  = _.template($('#act-now-template').html());
+      var $viewHtml = template({ title: self.model.get('title') });
       var $iframe;
 
       // Trial solution to iframe busting sites
@@ -60,6 +73,11 @@
       $el.append($iframe);
 
       return self;
+    },
+
+    newAction: function() {
+      TA.addAction({ mixpanel: this.options.mixpanel });
+      return false;
     },
 
     displayAfter: function(sibling) {

@@ -1,6 +1,9 @@
 (function() {
 
   TA.ActionRouter = Backbone.Router.extend({
+    initialize: function(options) {
+      this.options = options || {};
+    },
 
     routes: {
       ""                    : "index",
@@ -14,7 +17,7 @@
 
       TA.Console.log("routed to show", action);
       indexView.fadeOut(function() {
-        var actionView = new TA.ActionShowView({ model: action, id: 'act-now' });
+        var actionView = new TA.ActionShowView(_.extend(self.options, { model: action, id: 'act-now' }));
         actionView.displayAfter(indexView.el);
       });
     },
@@ -31,8 +34,8 @@
 
   }, {
 
-    start: function() {
-      new this;
+    start: function(options) {
+      new this(options);
       Backbone.history.start();
     }
 
