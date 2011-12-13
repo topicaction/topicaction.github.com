@@ -7,10 +7,51 @@
   // };
 
   // render() no-op for topic index view
-  TA.Header = {
-    html: function(html) {
-      $('#header').show().find('.container').html(html);
+  TA.Header = Backbone.View.extend({
+    initialize: function(options) {
+      var self = this;
+      _.bindAll(self, 'viewIndex', 'render');
+      options = options || {};
+      self.html = options.html;
+    },
+
+    events: {
+      "click a.did-it"      : "didIt",
+      "click a.add-action"  : "saveForLater",
+      "click a.view-index"  : "viewIndex"
+    },
+
+    el: '#header',
+
+    render: function() {
+      var self      = this;
+      var template  = _.template($("#header-template").html());
+      var $el       = $(self.el);
+      $el.children().fadeOut();
+      $el.html(template({ html: self.html })).show();
+      return self;
+    },
+
+    viewIndex: function(event) {
+      this.trigger('viewIndex', event);
+    },
+
+    didIt: function(event) {
+      $(event.target).text('Done!');
+      return false;
+    },
+
+    saveForLater: function() {
+      TA.saveForLater({ mixpanel: TA.user.mixpanel });
+      return false;
     }
+  });
+
+  TA.Header.update = function(options) {
+    options = options || {};
+    if (!this._instance) { this._instance = new this(options); }
+    this._instance.html = options.html;
+    return this._instance.render();
   };
 
   TA.TopicIndexView = Backbone.View;
@@ -25,9 +66,10 @@
 
     render: function() {
       var self = this;
+      var headerHtml = _.template('<h1><%= title %></h1>', { title: this.model.get('title') });
 
       // Reaching outside of view to set header content
-      TA.Header.html(_.template('<h1><%= title %></h1>', { title: this.model.get('title') }));
+      TA.Header.update({ html: headerHtml });
 
       self.$('.list-items').replaceWith(new TA.ActionListView({ model: this.model, className: 'list-items' }).el);
       self.fadeIn();
@@ -71,34 +113,22 @@
     initialize: function(options) {
       var self = this;
       self.options = options || {};
-      _.bindAll(self, "render", "remove", "newAction");
+      _.bindAll(self, "render", "remove");
       self.render();
-
-      $('#header').on('click', 'a.view-index', this.remove);  // preferably should not bind outside of scope
-    },
-
-    events: {
-      "click a.add-action" : "newAction"
     },
 
     render: function() {
       var self        = this;
       var $el         = $(self.el);
-      var headerTmpl  = _.template($('#act-now-header-template').html());
       var $iframe;
 
-      TA.Header.html(headerTmpl({ action: self.model }));
+      self.renderHeader();
 
       // self.preventIframeBust(); // Trial solution to iframe busting sites
       $iframe = self.renderIframe(self.model.get("url"), $el.height());
       $el.html($iframe);
 
       return self;
-    },
-
-    newAction: function() {
-      TA.addAction({ mixpanel: this.options.mixpanel });
-      return false;
     },
 
     displayAfter: function(sibling) {
@@ -118,6 +148,16 @@
         "noresize":"noresize"
       });
       return $iframe;
+    },
+
+    renderHeader: function() {
+      var self = this;
+      var headerHtml  = _.template($('#act-now-header-template').html(), { action: self.model });
+      self.header = TA.Header.update({ html: headerHtml });
+      self.header.bind('viewIndex', function(event) {
+        self.remove();
+        return false;
+      });
     },
 
     preventIframeBust: function() {

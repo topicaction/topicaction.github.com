@@ -4,17 +4,7 @@
 .bold { font-weight:bold; }
 
 /* Top Bar*/
-#header { display:none; }
-.topbar {
-  height: auto;
-  left: 0;
-  position: static;
-  right: 0;
-  top: 0;
-  z-index: 10000;
-}
-.topbar .container { position:relative; }
-.topbar-inner,.topbar .fill{
+#header {
   height: 70px;
 
   background-color:#003772;
@@ -32,6 +22,15 @@
   -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
+.topbar {
+  height: auto;
+  left: 0;
+  position: static;
+  right: 0;
+  top: 0;
+  z-index: 10000;
+}
+.topbar .container { position:relative; }
 .topbar h1, .topbar h2 {
   color: white;
   font-weight: bold;
@@ -181,9 +180,6 @@ ul, ol {
 	display: block;
 }
 
-#act-now {
-  display:none;
-}
 
 /* Cohort css */
 #social-buttons { display:none; }
@@ -218,6 +214,6 @@ ul, ol {
   display: inline-block;
 }
 
-/*.done-this*/
+/*.did-it-only*/
 #header a.add-action { display:none; }
 .save-for-later #header a.add-action { display:block; }

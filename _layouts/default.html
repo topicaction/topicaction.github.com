@@ -22,12 +22,7 @@
   </head>
 
   <body>
-    <div id='header' class="topbar">
-      <div class="topbar-inner">
-        <div class="container">
-        </div>
-      </div>
-    </div>
+    <div id="header"></div>
     <div id="topic" >
 			{{ content }}
     </div> <!-- /container -->
@@ -54,7 +49,10 @@
 		<script type="text/javascript" charset="utf-8">
 		  (function() {
         // If loading content in an iframe, don't set up page js
-        if (top.location.pathname != window.location.pathname) return;
+        if (top.location.pathname != window.location.pathname) {
+          $("#header").hide();
+          return;
+        }
 
   		  TA.user     = {
           mixpanel: TA.Mixpanel.create(mpq),

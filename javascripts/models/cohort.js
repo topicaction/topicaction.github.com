@@ -88,8 +88,8 @@
             displayName: 'Control Group'
           },
           {
-            className: 'done-this',
-            displayName: 'Done this'
+            className: 'did-it-only',
+            displayName: 'Did it only'
           },
           {
             className: 'save-for-later',
