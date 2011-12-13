@@ -1,16 +1,18 @@
-<script id='act-now-template' type="text/template" charset="utf-8">
-  <div class="topbar">
+<script id="header-template" type="text/template" charset="utf-8">
+  <div id='header' >
     <div class="topbar-inner">
       <div class="container">
-        <ul class="nav">
-          <li><a class='view-index btn success bold' href="#">I did it!</a></li>
-          <li><a class='add-action btn' href="#add-action">Save for later</a></li>
-        </ul>
-        <a class='view-index back-to-all' href="#">Back to all actions</a>
-        <h2><%= action.escape('title') %></h2>
       </div>
     </div>
   </div>
+</script>
+<script id='act-now-header-template' type="text/template" charset="utf-8">
+  <ul class="nav">
+    <li><a class='view-index btn success bold' href="#">I did it!</a></li>
+    <li><a class='add-action btn' href="#add-action">Save for later</a></li>
+  </ul>
+  <a class='view-index back-to-all' href="#">Back to all actions</a>
+  <h2><%= action.escape('title') %></h2>
 </script>
 <script id='action-list-template' type="text/template" charset="utf-8">
   <ul>

@@ -7,6 +7,12 @@
   // };
 
   // render() no-op for topic index view
+  TA.Header = {
+    html: function(html) {
+      $('#header').show().find('.container').html(html);
+    }
+  };
+
   TA.TopicIndexView = Backbone.View;
 
   TA.TopicShowView = Backbone.View.extend({
@@ -19,18 +25,18 @@
 
     render: function() {
       var self = this;
+
+      // Reaching outside of view to set header content
+      TA.Header.html(_.template('<h1><%= title %></h1>', { title: this.model.get('title') }));
+
       self.$('.list-items').replaceWith(new TA.ActionListView({ model: this.model, className: 'list-items' }).el);
       self.fadeIn();
       return self;
     },
 
-    fadeIn: function() {
-      $(this.el).fadeIn();
-    },
+    fadeIn: function() { $(this.el).fadeIn(); },
 
-    fadeOut: function(callback) {
-      $(this.el).fadeOut('slow', callback);
-    },
+    fadeOut: function(callback) { $(this.el).fadeOut('slow', callback); },
 
     animateAction: function(anchor) {
       var $li = $(anchor).parents("li");
@@ -67,26 +73,25 @@
       self.options = options || {};
       _.bindAll(self, "render", "remove", "newAction");
       self.render();
+
+      $('#header').on('click', 'a.view-index', this.remove);  // preferably should not bind outside of scope
     },
 
     events: {
-      "click a.view-index" : "remove",
       "click a.add-action" : "newAction"
     },
 
     render: function() {
-      var self      = this;
-      var $el       = $(self.el);
-      var template  = _.template($('#act-now-template').html());
-      var $viewHtml = template({ action: self.model });
+      var self        = this;
+      var $el         = $(self.el);
+      var headerTmpl  = _.template($('#act-now-header-template').html());
       var $iframe;
 
-      // Trial solution to iframe busting sites
-      // self.preventIframeBust();
+      TA.Header.html(headerTmpl({ action: self.model }));
 
-      $el.html($viewHtml);
+      // self.preventIframeBust(); // Trial solution to iframe busting sites
       $iframe = self.renderIframe(self.model.get("url"), $el.height());
-      $el.append($iframe);
+      $el.html($iframe);
 
       return self;
     },
