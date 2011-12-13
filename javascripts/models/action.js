@@ -9,7 +9,9 @@
     },
 
     findAllByTopic: function(topic) {
-      return this.select(function(action) { return action.get("topic_pathname") == topic.get("pathname"); });
+      return this.select(function(action) { 
+        return action.get("topic_pathname") == topic.get("pathname"); 
+      });
     }
   });
 
@@ -273,7 +275,7 @@
     {
       param : "driving-while-texting-talk-to-your-kids",
       title : "Talk to your kids about texting while driving",
-      url   : "talk-to-your-kids.html",
+      url   : "/talk-to-your-kids.html",
       user_count  : 11,
       relevancy   : 3.1,
       topic_pathname: '/driving-while-texting.html'

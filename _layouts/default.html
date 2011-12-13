@@ -48,22 +48,27 @@
 		<script type="text/javascript" src="/javascripts/routing/views.js"></script>
 
 		<script type="text/javascript" charset="utf-8">
-		  TA.user     = {
-        mixpanel: TA.Mixpanel.create(mpq),
-        cohort  : TA.Cohorts.findOrAssignCohort()
-		  };
+		  (function() {
+        // If loading content in an iframe, don't set up page js
+        if (top.location.pathname != window.location.pathname) return;
 
-      TA.user.mixpanel.registerCohort(TA.user.cohort);
-      TA.user.mixpanel.trackPageView();
+  		  TA.user     = {
+          mixpanel: TA.Mixpanel.create(mpq),
+          cohort  : TA.Cohorts.findOrAssignCohort()
+  		  };
 
-		  $(function() {
-        TA.ActionRouter.start(TA.user);
+        TA.user.mixpanel.registerCohort(TA.user.cohort);
+        TA.user.mixpanel.trackPageView();
 
-		    // Register dom ready triggers here
-        $('#action-items').trackClicks(TA.user);
-        $('button.add-action').addAction(TA.user);
-        $('body').addClass(TA.user.cohort.get("className"));
-		  });
+  		  $(function() {
+          TA.ActionRouter.start(TA.user);
+
+  		    // Register dom ready triggers here
+          $('#action-items').trackClicks(TA.user);
+          $('button.add-action').addAction(TA.user);
+          $('body').addClass(TA.user.cohort.get("className"));
+  		  });
+		  })();
 		</script>
   </body>
 </html>
