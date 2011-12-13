@@ -5,6 +5,10 @@
       this.options = options || {};
     },
 
+    cohort: function() {
+      return this.options.cohort;
+    },
+
     routes: {
       ""                    : "index",
       "act-now/:actionParam": "show"
@@ -13,13 +17,18 @@
     show: function(actionParam) {
       var self = this;
       var action = TA.Actions.findByParam(actionParam);
-      var indexView = self.view();
-
+      var indexView;
       TA.Console.log("routed to show", action);
-      indexView.fadeOut(function() {
-        var actionView = new TA.ActionShowView(_.extend(self.options, { model: action, id: 'act-now' }));
-        actionView.displayAfter(indexView.el);
-      });
+
+      if (self.cohort().isControl()) {
+        window.location = action.get('url');
+      } else {
+        indexView = self.view();
+        indexView.fadeOut(function() {
+          var actionView = new TA.ActionShowView(_.extend(self.options, { model: action, id: 'act-now' }));
+          actionView.displayAfter(indexView.el);
+        });
+      }
     },
 
     index: function() {

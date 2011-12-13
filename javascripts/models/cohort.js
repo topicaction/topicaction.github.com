@@ -1,12 +1,18 @@
 (function() {
   // Define cohort model
-  TA.Cohort = Backbone.Model;
+  TA.Cohort = Backbone.Model.extend({
+
+    isControl: function() {
+      return !!this.get('className').match(/control/);
+    }
+
+  });
 
   // Define cohort collection class
   TA.CohortCollection = Backbone.Collection.extend({
     model: TA.Cohort,
 
-    storageKey: 'topicaction-12082011',
+    storageKey: 'topicaction-12122011',
 
     findRandom: function() {
       return this.at(Math.floor(Math.random() * this.length));

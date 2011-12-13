@@ -27,7 +27,7 @@
       var self      = this;
       var template  = _.template($("#header-template").html());
       var $el       = $(self.el);
-      $el.children().fadeOut();
+      $el.children().fadeOut('fast');
       $el.html(template({ html: self.html })).show();
       return self;
     },
@@ -76,9 +76,9 @@
       return self;
     },
 
-    fadeIn: function() { $(this.el).fadeIn(); },
+    fadeIn: function() { $(this.el).fadeIn('fast'); },
 
-    fadeOut: function(callback) { $(this.el).fadeOut('slow', callback); },
+    fadeOut: function(callback) { $(this.el).fadeOut('fast', callback); },
 
     animateAction: function(anchor) {
       var $li = $(anchor).parents("li");

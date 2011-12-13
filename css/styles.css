@@ -180,7 +180,6 @@ ul, ol {
 	display: block;
 }
 
-
 /* Cohort css */
 #social-buttons { display:none; }
 .social-buttons #social-buttons { display:block; }
@@ -214,6 +213,5 @@ ul, ol {
   display: inline-block;
 }
 
-/*.did-it-only*/
 #header a.add-action { display:none; }
 .save-for-later #header a.add-action { display:block; }
