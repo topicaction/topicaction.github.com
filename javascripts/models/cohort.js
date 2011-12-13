@@ -42,7 +42,7 @@
   TA.Cohorts = new TA.CohortCollection;
 
   // Add cohort members by environment
-  if (!TA.Env.test()) {
+  if (TA.Env.test()) {
     TA.Cohorts.add([
       {
         className:  'testing-1',

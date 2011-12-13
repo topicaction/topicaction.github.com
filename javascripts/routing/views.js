@@ -1,27 +1,27 @@
 (function() {
-
-  // _.templateSettings = {
-  //   evaluate    : /<%([\s\S]+?)%>/g,
-  //   interpolate : /<%=([\s\S]+?)%>/g,
-  //   escape      : /<%-([\s\S]+?)%>/g
-  // };
+  // To experiment with mustache-style templates:
   // _.templateSettings = {
   //   evaluate    : /\{%([\s\S]+?)%\}/g,
   //   interpolate : /\{\{([\s\S]+?)\}\}/g,
   //   escape      : /\{-([\s\S]+?)-\}/g
   // };
 
-  TA.ActionIndexView = Backbone.View.extend({
+  // render() no-op for topic index view
+  TA.TopicIndexView = Backbone.View;
+
+  TA.TopicShowView = Backbone.View.extend({
     initialize: function(options) {
       var self = this;
       _.bindAll(self, "render", "fadeIn", "fadeOut");
-      self.render();
     },
 
     el: '#topic',
 
     render: function() {
-      this.fadeIn();
+      var self = this;
+      self.$('.list-items').replaceWith(new TA.ActionListView({ model: this.model, className: 'list-items' }).el);
+      self.fadeIn();
+      return self;
     },
 
     fadeIn: function() {
@@ -45,6 +45,22 @@
     }
   });
 
+  TA.ActionListView = Backbone.View.extend({
+    initialize: function() {
+      _.bindAll(this, 'render');
+      this.render();
+    },
+
+    render: function() {
+      var self = this;
+      var $el = $(self.el);
+      var template = _.template($('#action-list-template').html());
+      $el.html(template({ topic: self.model }));
+      $el.highlightVisitedLinks();
+      return self;
+    }
+  });
+
   TA.ActionShowView = Backbone.View.extend({
     initialize: function(options) {
       var self = this;
@@ -62,7 +78,7 @@
       var self      = this;
       var $el       = $(self.el);
       var template  = _.template($('#act-now-template').html());
-      var $viewHtml = template({ title: self.model.get('title') });
+      var $viewHtml = template({ action: self.model });
       var $iframe;
 
       // Trial solution to iframe busting sites

@@ -23,12 +23,21 @@
     },
 
     index: function() {
-      this.view().fadeIn();
+      this.view().render();
     },
 
-    view: function() {
+    view: function(topic) {
       var self = this;
-      if (!self._view) self._view = new TA.ActionIndexView;
+
+      // Visiting root is edge case so we don't cache the view
+      if (location.pathname == "/") { return new TA.TopicIndexView(); }
+
+      if (!self._view) {
+        // Cache the topic show page
+        var topic = TA.Topics.findByPathname(location.pathname);
+        self._view = new TA.TopicShowView({ model: topic });
+      }
+
       return self._view;
     }
 

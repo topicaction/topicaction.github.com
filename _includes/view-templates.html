@@ -6,7 +6,7 @@
           <h3><a href="#">Act Now</a></h3>
           <ul class="nav">
             <li>
-              <p><%= title %></p>
+              <p><%= action.escape('title') %></p>
             </li>
             <li><a class='view-index btn small primary' href="#">I have done this</a></li>
             <li><a class='add-action btn small' href="#add-action">Save for Later</a></li>
@@ -16,10 +16,15 @@
     </div>
   </div>
 </script>
-<script id='action-li-template' type="text/template" charset="utf-8">
+<script id='action-list-template' type="text/template" charset="utf-8">
   <ul>
-    <li>
-      <a href="http://vimeo.com/31100268" class="visited"><em>.</em> Watch a short video to learn more</a> <strong><em>83</em> people did this</strong> <em><strong>4.6</strong> relevancy</em>
-    </li>
+    <% topic.actions().each(function(action) { %>
+      <li>
+        <a href="#act-now/<%= action.get('param') %>">
+          <em>.</em> <%= action.get('title') %></a>
+          <strong><em><%= action.get('user_count') %></em> people did this</strong>
+          <em><strong><%= action.get('relevancy') %></strong> relevancy</em>
+      </li>
+    <% }); %>
   </ul>
 </script>
