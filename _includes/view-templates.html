@@ -1,17 +1,13 @@
 <script id='act-now-template' type="text/template" charset="utf-8">
-  <div class="topbar-wrapper">
-    <div class="topbar content">
-      <div class="topbar-inner">
-        <div class="container">
-          <h3><a href="#">Act Now</a></h3>
-          <ul class="nav">
-            <li>
-              <p><%= action.escape('title') %></p>
-            </li>
-            <li><a class='view-index btn small primary' href="#">I have done this</a></li>
-            <li><a class='add-action btn small' href="#add-action">Save for Later</a></li>
-          </ul>
-        </div>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="container">
+        <ul class="nav">
+          <li><a class='view-index btn success bold' href="#">I did it!</a></li>
+          <li><a class='add-action btn' href="#add-action">Save for later</a></li>
+        </ul>
+        <a class='view-index back-to-all' href="#">Back to all actions</a>
+        <h2><%= action.escape('title') %></h2>
       </div>
     </div>
   </div>

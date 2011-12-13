@@ -1,20 +1,27 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-
-<div id="action-items" class="action-list">
-	{{ content }}
-
-  <div class='list-items'></div>
-  <div id="add-action">
-    <ul><li><button class="add-action btn large">Add an action to the list</button></li></ul>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+    </div>
   </div>
 </div>
+<div class="content container">
+  <div id="action-items" class="action-list">
+  	{{ content }}
 
-<div id="social-buttons">
-	<h2>Share this action list with your friends</h2>
-	<div class="fb-like" data-href="http://topicaction.github.com{{ page.url }}?utm_source=fblike" data-send="true" data-width="450" data-show-faces="true"></div>
+    <div class='list-items'></div>
+    <div id="add-action">
+      <ul><li><button class="add-action btn large">Add an action to the list</button></li></ul>
+    </div>
+  </div>
+
+  <div id="social-buttons">
+  	<h2>Share this action list with your friends</h2>
+  	<div class="fb-like" data-href="http://topicaction.github.com{{ page.url }}?utm_source=fblike" data-send="true" data-width="450" data-show-faces="true"></div>
+  </div>
 </div>
 
 
