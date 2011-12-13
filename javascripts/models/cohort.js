@@ -57,6 +57,10 @@
       {
         className:  'testing-2',
         displayName: 'Testing 2'
+      },
+      {
+        className:  'control-testing-3',
+        displayName: 'Testing 3'
       }
     ]);
 

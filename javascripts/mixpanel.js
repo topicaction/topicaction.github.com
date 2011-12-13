@@ -8,6 +8,7 @@ TA.Mixpanel.create = function(mpq) {
 
 TA.Mixpanel.prototype = {
   registerCohort: function(cohort) {
+    TA.Console.log('mixpanel.register', 'cohort', cohort.get("displayName"));
     this.mpq.register({ 'cohort' : cohort.get("displayName") });
   },
 
