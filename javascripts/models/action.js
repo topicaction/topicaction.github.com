@@ -271,14 +271,14 @@
 	    relevancy   : 4.1,
 	    topic_pathname: '/stop-bullying-v.html'
 	  },
-	  {
-	    param : "bullying-facts",
-	    title : "Get the facts about bullying",
-	    url   : "http://www.stopbullying.gov/",
-	    user_count  : 83,
-	    relevancy   : 4.6,
-	    topic_pathname: '/stop-bullying-v.html'
-	  },
+	  // {
+	  //   param : "bullying-facts",
+	  //   title : "Get the facts about bullying",
+	  //   url   : "http://www.stopbullying.gov/",
+	  //   user_count  : 83,
+	  //   relevancy   : 4.6,
+	  //   topic_pathname: '/stop-bullying-v.html'
+	  // },
 	  {
 	    param : "it-gets-better-video",
 	    title : "Watch and share an It Gets Better video",
@@ -287,14 +287,14 @@
 	    relevancy   : 3.8,
 	    topic_pathname: '/stop-bullying-v.html'
 	  },
-	  {
-	    param : "self-defense-tips",
-	    title : "Get some basic self-defense tips",
-	    url   : "http://lifehacker.com/5825528/basic-self+defense-moves-anyone-can-do-and-everyone-should-know_",
-	    user_count  : 38,
-	    relevancy   : 3.7,
-	    topic_pathname: '/stop-bullying-v.html'
-	  },
+	  // {
+	  //   param : "self-defense-tips",
+	  //   title : "Get some basic self-defense tips",
+	  //   url   : "http://lifehacker.com/5825528/basic-self+defense-moves-anyone-can-do-and-everyone-should-know_",
+	  //   user_count  : 38,
+	  //   relevancy   : 3.7,
+	  //   topic_pathname: '/stop-bullying-v.html'
+	  // },
 	  {
 	    param : "bullying-quiz",
 	    title : "Take a bullying quiz and share your results",
