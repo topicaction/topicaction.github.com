@@ -106,6 +106,64 @@
     // }
   ]);
 
+	  // Occupy Wall Street - online only
+	  TA.Actions.add([
+	  {
+	    param : "add-a-twibbon",
+	    title : "Add a Twibbon (twitter ribbon) to your twitter picture",
+	    url   : "http://twibbon.com/join/i-support-occupy-wall-st",
+	    user_count  : 83,
+	    relevancy   : 4.6,
+	    topic_pathname: '/occupy-wall-st-v.html'
+	  },
+	  {
+	    param : "donate-to-ows",
+	    title : "Donate to Occupy Wall Street",
+	    url   : "http://occupywallst.org/donate/",
+	    user_count  : 47,
+	    relevancy   : 3.8,
+	    topic_pathname: '/occupy-wall-st-v.html'
+	  },
+	  {
+	    param : "join-facebook-group-ows",
+	    title : "Join the group on Facebook",
+	    url   : "http://www.facebook.com/OccupyWallSt",
+	    user_count  : 93,
+	    relevancy   : 4.1,
+	    topic_pathname: '/occupy-wall-st-v.html'
+	  }
+	]);
+
+	// Occupy Wall Street - offline only
+	  TA.Actions.add([
+	    {
+	      param : "move-to-credit-union",
+	      title : "Move your money from a big bank to a credit union",
+	      url   : "http://moveyourmoneyproject.org/find-bankcredit-union",
+	      user_count: 83,
+	      relevancy: 4.6,
+	      topic_pathname: '/occupy-wall-st-r.html'
+	    },
+	    {
+	      param : "send-credit-card-offers-back",
+	      title : "Send unsolicited credit card offers back to the banks",
+	      url   : "http://www.youtube.com/embed/2JlxbKtBkGM",
+	      user_count: 93,
+	      relevancy: 4.1,
+	      topic_pathname: '/occupy-wall-st-r.html'
+	    },
+	    {
+	      param : "attend-a-rally",
+	      title : "Attend a rally",
+	      url   : "http://en.wikipedia.org/wiki/List_of_Occupy_movement_protest_locations",
+	      user_count  : 47,
+	      relevancy   : 3.8,
+	      topic_pathname: '/occupy-wall-st-r.html'
+	    }
+	  ]);
+
+
+
   // Stop SOPA
   TA.Actions.add([
     {
@@ -162,7 +220,7 @@
   // Stop Bullying
   TA.Actions.add([
     {
-      param : "bulling-facts",
+      param : "bullying-facts",
       title : "Get the facts about bullying",
       url   : "http://www.stopbullying.gov/",
       user_count  : 83,
@@ -170,7 +228,7 @@
       topic_pathname: '/stop-bullying.html'
     },
     {
-      param : "anti-bulling-pledge",
+      param : "anti-bullying-pledge",
       title : "Sign the Anti-Bullying pledge",
       url   : "http://www.drphil.com/page/students/",
       user_count  : 93,
@@ -194,7 +252,7 @@
       topic_pathname: '/stop-bullying.html'
     },
     {
-      param : "stop-bulling-comic",
+      param : "stop-bullying-comic",
       title : "Make your own Stop Bullying comic",
       url   : "http://stopbullying.bitstrips.com/challenge/",
       user_count  : 59,
