@@ -1,6 +1,6 @@
 ---
 layout: topic
-title: Help Stop Bullying  
+title: Stop Bullying  
 description: Actions you can do to help stop bullying
 ---
 
