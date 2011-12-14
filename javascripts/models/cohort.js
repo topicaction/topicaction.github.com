@@ -100,10 +100,6 @@
           {
             className: 'did-it-only',
             displayName: 'Did it only'
-          },
-          {
-            className: 'save-for-later',
-            displayName: 'Save for Later'
           }
         ]);
       break;
