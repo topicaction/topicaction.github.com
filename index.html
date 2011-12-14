@@ -3,10 +3,11 @@ layout: default
 title: Topic / Action
 description: A list of great topics with some good actions to do
 ---
-
+<div class="content container">
   <h1>Topics</h1>
   <ul class="posts action-list">
     {% for post in site.posts %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
 	</ul>
+</div>

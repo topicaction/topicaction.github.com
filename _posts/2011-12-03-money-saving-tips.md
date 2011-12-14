@@ -1,6 +1,6 @@
 ---
 layout: topic
-title: 5 free money tips you can do right now
+title: Free money tips now
 description: Actions you can do today to save money.
 ---
 

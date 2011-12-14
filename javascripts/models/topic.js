@@ -27,7 +27,7 @@
       pathname    : "/driving-while-texting.html"
     },
     {
-      title       : "5 free money tips you can do right now",
+      title       : "Free money tips now",
       description : "Actions you can do today to save money.",
       pathname    : "/money-saving-tips.html"
     },

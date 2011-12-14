@@ -28,15 +28,15 @@
 
   // Money Saving Tips
   TA.Actions.add([
-    {
-      param : "bring-change",
-      title : "Bring all your change to the bank",
-      url   : "http://bucks.blogs.nytimes.com/2011/06/02/banks-where-you-can-still-count-your-change/",
-      topic_pathname: '/money-saving-tips.html'
-    },
+    // {
+    //   param : "bring-change",
+    //   title : "Bring all your change to the bank",
+    //   url   : "http://bucks.blogs.nytimes.com/2011/06/02/banks-where-you-can-still-count-your-change/",
+    //   topic_pathname: '/money-saving-tips.html'
+    // },
     {
       param : "price-check",
-      title : "Price check in-store items on Amazon for a 5% discount",
+      title : "Amazon price check for a 5% discount",
       url   : "http://www.amazon.com/gp/feature.html?docId=1000749751",
       topic_pathname: '/money-saving-tips.html'
     },
@@ -64,14 +64,14 @@
       relevancy: 4.6,
       topic_pathname: '/occupy-wall-st.html'
     },
-    {
-      param : "send-credit-card-offers-back",
-      title : "Send unsolicited credit card offers back to the banks",
-      url   : "http://www.youtube.com/watch?v=2JlxbKtBkGM&feature=youtu.be",
-      user_count: 93,
-      relevancy: 4.1,
-      topic_pathname: '/occupy-wall-st.html'
-    },
+    // {
+    //   param : "send-credit-card-offers-back",
+    //   title : "Send unsolicited credit card offers back to the banks",
+    //   url   : "http://www.youtube.com/watch?v=2JlxbKtBkGM&feature=youtu.be",
+    //   user_count: 93,
+    //   relevancy: 4.1,
+    //   topic_pathname: '/occupy-wall-st.html'
+    // },
     {
       param : "attend-a-rally",
       title : "Attend a rally",
@@ -95,27 +95,27 @@
       user_count  : 11,
       relevancy   : 3.2,
       topic_pathname: '/occupy-wall-st.html'
-    },
-    {
-      param : "join-facebook-group-ows",
-      title : "Join the group on Facebook",
-      url   : "http://www.facebook.com/OccupyWallSt",
-      user_count  : 59,
-      relevancy   : 3.1,
-      topic_pathname: '/occupy-wall-st.html'
     }
+    // {
+    //   param : "join-facebook-group-ows",
+    //   title : "Join the group on Facebook",
+    //   url   : "http://www.facebook.com/OccupyWallSt",
+    //   user_count  : 59,
+    //   relevancy   : 3.1,
+    //   topic_pathname: '/occupy-wall-st.html'
+    // }
   ]);
 
   // Stop SOPA
   TA.Actions.add([
-    {
-      param : "sopa-video-intro",
-      title : "Watch a short video to learn more",
-      url   : "http://vimeo.com/31100268",
-      user_count  : 83,
-      relevancy   : 4.6,
-      topic_pathname: '/stop-sopa.html'
-    },
+    // {
+    //   param : "sopa-video-intro",
+    //   title : "Watch a short video to learn more",
+    //   url   : "http://vimeo.com/31100268",
+    //   user_count  : 83,
+    //   relevancy   : 4.6,
+    //   topic_pathname: '/stop-sopa.html'
+    // },
     {
       param : "sopa-infographic",
       title : "Check out this infographic",
@@ -142,14 +142,14 @@
     },
     {
       param : "sopa-filibuster",
-      title : "Ask Senator Wyden to read your name during his filibuster",
+      title : "Participate in Senator Wyden's filibuster",
       url   : "http://stopcensorship.org/",
       user_count  : 11,
       relevancy   : 3.2,
       topic_pathname: '/stop-sopa.html'
     },
     {
-      param : "sopa-filibuster",
+      param : "sopa-whitehouse-petition",
       title : "Sign this whitehouse.gov petition",
       url   : "https://wwws.whitehouse.gov/petitions#!/petition/stop-e-parasite-act/SWBYXX55",
       user_count  : 59,
