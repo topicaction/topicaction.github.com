@@ -261,6 +261,104 @@
     }
   ]);
 
+	// Stop Bullying - online only
+	TA.Actions.add([
+		{
+	    param : "stop-bullying-speak-up",
+	    title : "Pledge to speak up",
+	    url   : "http://www.facebook.com/stopbullyingspeakup",
+	    user_count  : 93,
+	    relevancy   : 4.1,
+	    topic_pathname: '/stop-bullying-v.html'
+	  },
+	  {
+	    param : "bullying-facts",
+	    title : "Get the facts about bullying",
+	    url   : "http://www.stopbullying.gov/",
+	    user_count  : 83,
+	    relevancy   : 4.6,
+	    topic_pathname: '/stop-bullying-v.html'
+	  },
+	  {
+	    param : "it-gets-better-video",
+	    title : "Watch and share an It Gets Better video",
+	    url   : "http://www.itgetsbetter.org",
+	    user_count  : 47,
+	    relevancy   : 3.8,
+	    topic_pathname: '/stop-bullying-v.html'
+	  },
+	  {
+	    param : "self-defense-tips",
+	    title : "Get some basic self-defense tips",
+	    url   : "http://lifehacker.com/5825528/basic-self+defense-moves-anyone-can-do-and-everyone-should-know_",
+	    user_count  : 38,
+	    relevancy   : 3.7,
+	    topic_pathname: '/stop-bullying-v.html'
+	  },
+	  {
+	    param : "bullying-quiz",
+	    title : "Take a bullying quiz and share your results",
+	    url   : "http://www.education.com/quiz/bullying-myths/",
+	    user_count  : 59,
+	    relevancy   : 3.1,
+	    topic_pathname: '/stop-bullying-v.html'
+	  },
+	  {
+	    param : "safe-space",
+	    title : "Purchase a safe space kit for a school",
+	    url   : "http://safespace.glsen.org/",
+	    user_count  : 47,
+	    relevancy   : 3.8,
+	    topic_pathname: '/stop-bullying-v.html'
+	  }
+	  // {
+	  //   param : "stop-bullying-comic",
+	  //   title : "Make your own Stop Bullying comic",
+	  //   url   : "http://stopbullying.bitstrips.com/challenge/",
+	  //   user_count  : 59,
+	  //   relevancy   : 3.1,
+	  //   topic_pathname: '/stop-bullying-v.html'
+	  // }
+	]);
+
+
+	// Stop Bullying - offline only
+	TA.Actions.add([
+	  {
+	    param : "school-bullying-petition",
+	    title : "Host a petition-signing event at your school",
+	    url   : "http://www.pacer.org/bullying/resources/activities/toolkits/petition-toolkit.asp",
+	    user_count  : 38,
+	    relevancy   : 3.7,
+	    topic_pathname: '/stop-bullying-r.html'
+	  },  
+	  {
+	    param : "trevor-volunteer",
+	    title : "Volunteer to be a lifeline counselor",
+	    url   : "http://www.thetrevorproject.org/volunteers/opportunities",
+	    user_count  : 11,
+	    relevancy   : 3.2,
+	    topic_pathname: '/stop-bullying-r.html'
+	  },
+	  {
+	    param : "no-name-calling-materials",
+	    title : "Distribute posters and stickers for No Name-Calling week",
+	    url   : "http://www.nonamecallingweek.org/cgi-bin/iowa/all/resources/record/112.html",
+	    user_count  : 83,
+	    relevancy   : 4.6,
+	    topic_pathname: '/stop-bullying-r.html'
+	  },
+	  {
+	    param : "conversation-starters",
+	    title : "Start a conversation about bullying",
+	    url   : "http://store.samhsa.gov/shin/content/SMA08-4321/SMA08-4321.pdf",
+	    user_count  : 59,
+	    relevancy   : 3.1,
+	    topic_pathname: '/stop-bullying-r.html'
+	  }
+	]);
+
+
   // NYC Homeless
   TA.Actions.add([
     {

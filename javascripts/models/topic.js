@@ -60,6 +60,16 @@
       title       : "Stop Bullying",
       description : "Actions you can do today to help stop bullying.",
       pathname    : "/stop-bullying.html"
+    },
+    {
+      title       : "Stop Bullying Now",
+      description : "Actions you can do today to help stop bullying.",
+      pathname    : "/stop-bullying-v.html"
+    },
+    {
+      title       : "Help Stop Bullying",
+      description : "Actions you can do to help stop bullying.",
+      pathname    : "/stop-bullying-r.html"
     }
   ]);
 
