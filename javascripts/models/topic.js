@@ -42,12 +42,12 @@
       pathname    : "/occupy-wall-st.html"
     },
     {
-      title       : "Occupy Wall Street - online",
+      title       : "Occupy Wall Street #OWS",
       description : "Actions you can do today to help support Occupy Wall Street",
       pathname    : "/occupy-wall-st-v.html"
     },
     {
-      title       : "Occupy Wall Street - offline",
+      title       : "Occupy Wall Street (OWS)",
       description : "Actions you can do today to help support Occupy Wall Street",
       pathname    : "/occupy-wall-st-r.html"
     },
