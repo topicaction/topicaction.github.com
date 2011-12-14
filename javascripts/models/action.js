@@ -1,5 +1,14 @@
 (function() {
-  TA.Action = Backbone.Model;
+  TA.Action = Backbone.Model.extend({
+
+    topic: function() {
+      return TA.Topics.findByPathname(this.get('topic_pathname'));
+    },
+
+    topicTitle: function() {
+      return this.topic().get('title');
+    }
+  });
 
   TA.ActionCollection = Backbone.Collection.extend({
     model: TA.Action,
@@ -9,8 +18,8 @@
     },
 
     findAllByTopic: function(topic) {
-      return this.select(function(action) { 
-        return action.get("topic_pathname") == topic.get("pathname"); 
+      return this.select(function(action) {
+        return action.get("topic_pathname") == topic.get("pathname");
       });
     }
   });

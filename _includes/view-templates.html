@@ -6,12 +6,12 @@
   </div>
 </script>
 <script id='act-now-header-template' type="text/template" charset="utf-8">
+  <a class='view-index back-to-all' href="#">Back to all actions</a>
+  <h2><%= action.topicTitle() %>: <span class='font-normal'><%= action.escape('title') %></span></h2>
   <ul class="nav">
     <li><a class='btn success bold did-it' href="#did-it">I did it!</a></li>
     <li><a class='add-action btn' href="#add-action">Save for later</a></li>
   </ul>
-  <a class='view-index back-to-all' href="#">Back to all actions</a>
-  <h2><%= action.escape('title') %></h2>
 </script>
 <script id='action-list-template' type="text/template" charset="utf-8">
   <ul>

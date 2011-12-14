@@ -45,16 +45,19 @@
   font-size: 24px;
   line-height: 54px;
   padding-top: 16px;
+  float:left;
 }
+.topbar h2 .font-normal { font-weight:normal; }
 
 .topbar a { color:black; }
-.topbar .nav { float:right; margin-top:14px; }
-.topbar .nav li { padding-left:5px; }
+.topbar .nav { float:left; margin-top:14px; }
+.topbar .nav li { padding-left:14px; }
 .topbar .nav p { color: white; text-shadow: none; }
-.topbar .nav .btn { padding: 4px 7px 4px;
-  margin-top:5px;
+.topbar .nav .btn {
+  padding: 11px 15px;
   text-shadow: 0 1px white;
   color:black;
+  font-size:1.5em;
 }
 .btn.success,.alert-message.success{
   background-color:#82B01D;
