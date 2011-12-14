@@ -16,6 +16,10 @@ TA.Mixpanel.prototype = {
     this.track('page viewed', {'page name' : document.title, 'url' : window.location.pathname});
   },
 
+  trackClick: function(eventName) {
+    this.track(eventName, {'page name' : document.title, 'url' : window.location.pathname});
+  },
+
   track: function(eventName, options) {
     TA.Console.log('mixpanel.track', eventName, options);
     this.mpq.track(eventName, options);

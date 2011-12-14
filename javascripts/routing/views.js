@@ -37,12 +37,14 @@
     },
 
     didIt: function(event) {
+      TA.user.mixpanel.trackClick('I did it');
       $(event.target).text('Done!');
       return false;
     },
 
     saveForLater: function() {
-      TA.saveForLater({ mixpanel: TA.user.mixpanel });
+      TA.user.mixpanel.trackClick('Save for later');
+      TA.saveForLater();
       return false;
     }
   });
