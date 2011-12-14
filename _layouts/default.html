@@ -12,7 +12,7 @@
     <![endif]-->
 
 
-		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/styles.css">
 <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -22,38 +22,55 @@
   </head>
 
   <body>
-
-    <div class="container">
-			<div class="content">
-				{{ content }}
-	    </div>
-
+    <div id="header"></div>
+    <div id="topic" >
+			{{ content }}
     </div> <!-- /container -->
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script type="text/javascript" src="/javascripts/amplify.min.js"></script>
-		{% include facebook.html %}
-		{% include ga.html %}
-		{% include mixpanel.html %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/javascripts/vendor/underscore.min.js"></script>
+		<script type="text/javascript" src="/javascripts/vendor/amplify.min.js"></script>
+		<script type="text/javascript" src="/javascripts/vendor/backbone.min.js"></script>
+    {% include facebook.html %}
+    {% include ga.html %}
+    {% include mixpanel.html %}
+    {% include view-templates.html %}
 		<script type="text/javascript" src="/javascripts/environment.js"></script>
 		<script type="text/javascript" src="/javascripts/cookie.js"></script>
 		<script type="text/javascript" src="/javascripts/mixpanel.js"></script>
-		<script type="text/javascript" src="/javascripts/cohort.js"></script>
-		<script type="text/javascript" src="/javascripts/visited-link.js"></script>
+		<script type="text/javascript" src="/javascripts/track-clicks.js"></script>
+		<script type="text/javascript" src="/javascripts/add-action.js"></script>
+		<script type="text/javascript" src="/javascripts/models/cohort.js"></script>
+		<script type="text/javascript" src="/javascripts/models/action.js"></script>
+		<script type="text/javascript" src="/javascripts/models/topic.js"></script>
+		<script type="text/javascript" src="/javascripts/routing/action-router.js"></script>
+		<script type="text/javascript" src="/javascripts/routing/views.js"></script>
 
 		<script type="text/javascript" charset="utf-8">
-		  TA.mixpanel = new TA.Mixpanel(mpq);
-      TA.cohort   = TA.getCohortFromStorage();
+		  (function() {
+        // If loading content in an iframe, don't set up page js
+        if (top.location.pathname != window.location.pathname) {
+          $("#header").hide();
+          return;
+        }
 
-      TA.mixpanel.registerCohort(TA.cohort);
-      TA.mixpanel.trackPageView();
+  		  TA.user     = {
+          mixpanel: TA.Mixpanel.create(mpq),
+          cohort  : TA.Cohorts.findOrAssignCohort()
+  		  };
 
-		  $(function() {
-		    // Register dom ready triggers here
-		    $('#action-items').trackClicks(TA.mixpanel);
-        $('#action-items a').attr('target', '_blank');
-        $('body').addClass(TA.cohort.className);
-		  });
+        TA.user.mixpanel.registerCohort(TA.user.cohort);
+        TA.user.mixpanel.trackPageView();
+
+  		  $(function() {
+          TA.ActionRouter.start(TA.user);
+
+  		    // Register dom ready triggers here
+          $('#action-items').trackClicks(TA.user);
+          $('button.add-action').addAction(TA.user);
+          $('body').addClass(TA.user.cohort.get("className"));
+  		  });
+		  })();
 		</script>
   </body>
 </html>

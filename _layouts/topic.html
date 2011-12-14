@@ -1,19 +1,20 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
+<div class="content container">
+  <div id="action-items" class="action-list">
+  	{{ content }}
 
-<div id="action-items">
-	{{ content }}
-<div id="add-action">
-<ul><li><button class="btn large" onclick="mpq.track('clicked add action', {'page name' : document.title, 'url' : window.location.pathname}); window.open('http://challengepost.wufoo.com/forms/z7x1x7/',  null, 'height=497, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" >Add an action to the list</button></li></ul>
-</div>
+    <div class='list-items'></div>
+    <div id="add-action">
+      <ul><li><button class="add-action btn large">Add an action to the list</button></li></ul>
+    </div>
+  </div>
 
-</div>
-
-<div id="social-buttons">
-	<h2>Share this action list with your friends</h2>
-	<div class="fb-like" data-href="http://topicaction.github.com{{ page.url }}?utm_source=fblike" data-send="true" data-width="450" data-show-faces="true"></div>
+  <div id="social-buttons">
+  	<h2>Share this action list with your friends</h2>
+  	<div class="fb-like" data-href="http://topicaction.github.com{{ page.url }}?utm_source=fblike" data-send="true" data-width="450" data-show-faces="true"></div>
+  </div>
 </div>
 
 
