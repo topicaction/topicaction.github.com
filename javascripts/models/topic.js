@@ -42,6 +42,16 @@
       pathname    : "/occupy-wall-st.html"
     },
     {
+      title       : "Occupy Wall Street - online",
+      description : "Actions you can do today to help support Occupy Wall Street",
+      pathname    : "/occupy-wall-st-v.html"
+    },
+    {
+      title       : "Occupy Wall Street - offline",
+      description : "Actions you can do today to help support Occupy Wall Street",
+      pathname    : "/occupy-wall-st-r.html"
+    },
+    {
       title       : "Stop SOPA / PIPA",
       description : "Actions you can do today to stop SOPA and PIPA from passing.",
       pathname    : "/stop-sopa.html"
