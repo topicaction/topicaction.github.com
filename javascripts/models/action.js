@@ -64,14 +64,14 @@
       relevancy: 4.6,
       topic_pathname: '/occupy-wall-st.html'
     },
-    // {
-    //   param : "send-credit-card-offers-back",
-    //   title : "Send unsolicited credit card offers back to the banks",
-    //   url   : "http://www.youtube.com/watch?v=2JlxbKtBkGM&feature=youtu.be",
-    //   user_count: 93,
-    //   relevancy: 4.1,
-    //   topic_pathname: '/occupy-wall-st.html'
-    // },
+    {
+      param : "send-credit-card-offers-back",
+      title : "Send unsolicited credit card offers back to the banks",
+      url   : "http://www.youtube.com/embed/2JlxbKtBkGM",
+      user_count: 93,
+      relevancy: 4.1,
+      topic_pathname: '/occupy-wall-st.html'
+    },
     {
       param : "attend-a-rally",
       title : "Attend a rally",
@@ -108,14 +108,15 @@
 
   // Stop SOPA
   TA.Actions.add([
-    // {
-    //   param : "sopa-video-intro",
-    //   title : "Watch a short video to learn more",
-    //   url   : "http://vimeo.com/31100268",
-    //   user_count  : 83,
-    //   relevancy   : 4.6,
-    //   topic_pathname: '/stop-sopa.html'
-    // },
+    {
+      param : "sopa-video-intro",
+      title : "Watch a short video to learn more",
+      url   : "http://player.vimeo.com/video/31100268?byline=0&amp;portrait=0",
+      user_count  : 83,
+      relevancy   : 4.6,
+      topic_pathname: '/stop-sopa.html'
+    },
+    
     {
       param : "sopa-infographic",
       title : "Check out this infographic",
@@ -251,7 +252,7 @@
   TA.Actions.add([
     {
       param : "driving-while-texting-facts",
-      title : "Get the facts about texting while driving",
+      title : "Get the facts",
       url   : "http://distraction.gov",
       user_count  : 83,
       relevancy   : 4.6,
@@ -259,20 +260,20 @@
     },
     {
       param : "driving-while-texting-video",
-      title : "Watch this shocking PSA about texting while driving",
-      url   : "http://www.youtube.com/watch?v=DGE8LzRaySk",
+      title : "Watch this shocking PSA",
+      url   : "http://www.youtube.com/embed/DGE8LzRaySk",
       user_count  : 93,
       relevancy   : 4.1,
       topic_pathname: '/driving-while-texting.html'
     },
-    {
-      param : "no-phone-zone-pledge",
-      title : "Take Oprah's No Phone Zone pledge",
-      url   : "http://www.oprah.com/questionaire/ipledge.html?id=4",
-      user_count  : 47,
-      relevancy   : 3.8,
-      topic_pathname: '/driving-while-texting.html'
-    },
+    // {
+    //   param : "no-phone-zone-pledge",
+    //   title : "Take Oprah's No Phone Zone pledge",
+    //   url   : "http://www.oprah.com/questionaire/ipledge.html?id=4",
+    //   user_count  : 47,
+    //   relevancy   : 3.8,
+    //   topic_pathname: '/driving-while-texting.html'
+    // },
     {
       param : "lobby-for-local-laws",
       title : "Lobby for local laws",
