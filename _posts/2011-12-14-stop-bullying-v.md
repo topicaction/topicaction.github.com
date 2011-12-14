@@ -1,6 +1,6 @@
 ---
 layout: topic
-title: Stop Bullying
+title: Stop Bullying Now
 description: Actions you can do today to help stop bullying
 ---
 
