@@ -42,7 +42,7 @@
       pathname    : "/occupy-wall-st.html"
     },
     {
-      title       : "Occupy Wall Street #OWS",
+      title       : "Occupy Wall St.",
       description : "Actions you can do today to help support Occupy Wall Street",
       pathname    : "/occupy-wall-st-v.html"
     },

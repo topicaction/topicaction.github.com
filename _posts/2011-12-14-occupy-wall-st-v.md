@@ -1,6 +1,6 @@
 ---
 layout: topic
-title: Occupy Wall Street #OWS
+title: Occupy Wall St.
 description: Actions you can do today to help support Occupy Wall Street
 ---
 
