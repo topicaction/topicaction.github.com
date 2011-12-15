@@ -46,5 +46,15 @@
     "description" : "Actions you can do today to help stop bullying.",
     "pathname"    : "/stop-bullying.html",
     "action_type" : null
+  },
+  {
+    "title"       : "Stop Bullying",
+    "description" : "Actions you can do today to help stop bullying.",
+    "pathname"    : "/stop-bullying-v.html"
+  },
+  {
+    "title"       : "Stop Bullying",
+    "description" : "Actions you can do to help stop bullying.",
+    "pathname"    : "/stop-bullying-r.html"
   }
 ]
