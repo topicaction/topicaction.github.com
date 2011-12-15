@@ -6,13 +6,26 @@
   //   escape      : /\{-([\s\S]+?)-\}/g
   // };
 
-  // render() no-op for topic index view
-  TA.Header = Backbone.View.extend({
+  TA.TopicHeader = Backbone.View.extend({
+    initialize: function() {
+      _.bindAll(this, 'render');
+      this.render();
+    },
+
+    render: function() {
+      var self = this;
+      var $el  = $(self.el);
+      var html = _.template('<h1><%= title %></h1>', { title: self.model.get('title') });
+      $el.html(html);
+      return self;
+    }
+  });
+
+  TA.ActionHeader = Backbone.View.extend({
     initialize: function(options) {
       var self = this;
-      _.bindAll(self, 'viewIndex', 'render');
-      options = options || {};
-      self.html = options.html;
+      _.bindAll(self, 'viewIndex', 'render', 'didIt', 'viewIndex');
+      self.render();
     },
 
     events: {
@@ -21,14 +34,11 @@
       "click a.view-index"  : "viewIndex"
     },
 
-    el: '#header',
-
     render: function() {
-      var self      = this;
-      var template  = _.template($("#header-template").html());
-      var $el       = $(self.el);
-      $el.children().fadeOut('fast');
-      $el.html(template({ html: self.html })).show();
+      var self = this;
+      var $el  = $(self.el);
+      var html = _.template($('#act-now-header-template').html(), { action: self.model });
+      $el.html(html);
       return self;
     },
 
@@ -49,63 +59,46 @@
     }
   });
 
-  TA.Header.update = function(options) {
-    options = options || {};
-    if (!this._instance) { this._instance = new this(options); }
-    this._instance.html = options.html;
-    return this._instance.render();
-  };
-
   TA.TopicIndexView = Backbone.View;
 
   TA.TopicShowView = Backbone.View.extend({
     initialize: function(options) {
       var self = this;
       _.bindAll(self, "render", "fadeIn", "fadeOut");
+      self.render();
     },
 
     el: '#topic',
 
+    events: {
+      "click a.action"  : "fadeOut"
+    },
+
     render: function() {
       var self = this;
-      var headerHtml = _.template('<h1><%= title %></h1>', { title: this.model.get('title') });
-
-      // Reaching outside of view to set header content
-      TA.Header.update({ html: headerHtml });
-
+      var $el   = $(self.el);
       self.$('.list-items').replaceWith(new TA.ActionListView({ model: this.model, className: 'list-items' }).el);
-      self.fadeIn();
+      $el.show();
       return self;
     },
 
     fadeIn: function() { $(this.el).fadeIn('fast'); },
 
-    fadeOut: function(callback) { $(this.el).fadeOut('fast', callback); },
+    fadeOut: function() { $(this.el).fadeOut('fast'); }
 
-    animateAction: function(anchor) {
-      var $li = $(anchor).parents("li");
-      var $liClone = $li.clone();
-      $liClone.appendTo('body');
-        $liClone.css({
-        "position": "absolute",
-        "top": $li.position().top+'px',
-        "left": $li.position().left+'px'
-      }).show();
-      $liClone.animate({ top: 0, 'opacity': 0 });
-    }
   });
 
   TA.ActionListView = Backbone.View.extend({
     initialize: function() {
       _.bindAll(this, 'render');
+      this.template = _.template($('#action-list-template').html());
       this.render();
     },
 
     render: function() {
       var self = this;
       var $el = $(self.el);
-      var template = _.template($('#action-list-template').html());
-      $el.html(template({ topic: self.model }));
+      $el.html(self.template({ topic: self.model }));
       $el.highlightVisitedLinks();
       return self;
     }
@@ -124,20 +117,11 @@
       var $el         = $(self.el);
       var $iframe;
 
-      self.renderHeader();
-
       // self.preventIframeBust(); // Trial solution to iframe busting sites
       $iframe = self.renderIframe(self.model.get("url"), $el.height());
       $el.html($iframe);
 
       return self;
-    },
-
-    displayAfter: function(sibling) {
-      var self = this, $el = $(self.el);
-      $el.css({"opacity": 0, "display": "block"});
-      $(sibling).after($el);
-      $el.animate({"opacity": 1});
     },
 
     renderIframe: function(url, height) {
@@ -150,16 +134,6 @@
         "noresize":"noresize"
       });
       return $iframe;
-    },
-
-    renderHeader: function() {
-      var self = this;
-      var headerHtml  = _.template($('#act-now-header-template').html(), { action: self.model });
-      self.header = TA.Header.update({ html: headerHtml });
-      self.header.bind('viewIndex', function(event) {
-        self.remove();
-        return false;
-      });
     },
 
     preventIframeBust: function() {

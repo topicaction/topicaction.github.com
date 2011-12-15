@@ -16,37 +16,48 @@
 
     show: function(actionParam) {
       var self = this;
-      var action = TA.Actions.findByParam(actionParam);;
-      var view = self.topicShowView();
+      var action = TA.Actions.findByParam(actionParam);
+      var actionView;
+
       TA.Console.log("routed to show", action);
 
       if (self.cohort().isControl()) {
         window.location = action.get('url');
       } else {
-        view.fadeOut(function() {
-          var actionView = new TA.ActionShowView(_.extend(self.options, { model: action, id: 'act-now' }));
-          actionView.displayAfter(view.el);
+        $("#header .container").html(new TA.ActionHeader({ model: action }).el);
+        $("#topic").fadeOut(function() {
+          actionView = new TA.ActionShowView(_.extend(self.options, { model: action, id: 'act-now' }));
+          $("#action").html(actionView.el);
         });
       }
     },
 
     index: function() {
-      var self = this;
-      if (self.pathname() == "/") { return new TA.TopicIndexView(); }
+      if (this.pathname() == "/") { return new TA.TopicIndexView(); }
 
-      self.topicShowView().render();
+      var self = this;
+      var topic = self.topic();
+
+      $('#header .container').html(new TA.TopicHeader({ model: topic }).el);
+      $("#action").empty();
+      self.topicShowView(topic);
       return null;
     },
 
-    topicShowView: function() {
+    topicShowView: function(topic) {
       var self = this;
+
       if (!self._view) {
         // Cache the topic show page
-        var topic = TA.Topics.findByPathname(self.pathname());
         self._view = new TA.TopicShowView({ model: topic });
+        return self._view;
+      } else {
+        return self._view.render();
       }
+    },
 
-      return self._view;
+    topic: function() {
+      return TA.Topics.findByPathname(this.pathname());
     },
 
     pathname: function() {
