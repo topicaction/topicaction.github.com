@@ -1,0 +1,50 @@
+[
+  {
+    "title"       : "Texting while driving awareness",
+    "description" : "Actions you can do today to increase driver safety and stop texting while driving.",
+    "pathname"    : "/driving-while-texting.html",
+    "action_type" : null
+  },
+  {
+    "title"       : "Free money tips now",
+    "description" : "Actions you can do today to save money.",
+    "pathname"    : "/money-saving-tips.html",
+    "action_type" : null
+  },
+  {
+    "title"       : "5 things to help the homeless in New York City",
+    "description" : "Actions you can do today to help combat homelessness in New York City",
+    "pathname"    : "/new-york-city-homeless.html",
+    "action_type" : null
+  },
+  {
+    "title"       : "Occupy Wall Street",
+    "description" : "Actions you can do today to help support Occupy Wall Street",
+    "pathname"    : "/occupy-wall-st.html",
+    "action_type" : null
+  },
+  {
+    "title"       : "Occupy Wall St.",
+    "description" : "Actions you can do today to help support Occupy Wall Street",
+    "pathname"    : "/occupy-wall-st-v.html",
+    "action_type" : "online"
+  },
+  {
+    "title"       : "Occupy Wall Street (OWS)",
+    "description" : "Actions you can do today to help support Occupy Wall Street",
+    "pathname"    : "/occupy-wall-st-r.html",
+    "action_type" : "offline"
+  },
+  {
+    "title"       : "Stop SOPA / PIPA",
+    "description" : "Actions you can do today to stop SOPA and PIPA from passing.",
+    "pathname"    : "/stop-sopa.html",
+    "action_type" : null
+  },
+  {
+    "title"       : "Stop Bullying",
+    "description" : "Actions you can do today to help stop bullying.",
+    "pathname"    : "/stop-bullying.html",
+    "action_type" : null
+  }
+]

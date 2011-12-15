@@ -1,0 +1,22 @@
+[
+  {
+    "className"   : "control-group",
+    "displayName" : "Control Group"
+  },
+  {
+    "className"   : "social-buttons",
+    "displayName" : "Social buttons"
+  },
+  {
+    "className"   : "popularity",
+    "displayName" : "Popularity"
+  },
+  {
+    "className"   : "relevancy",
+    "displayName" : "Relevancy"
+  },
+  {
+    "className"   : "add-action",
+    "displayName" : "Add Action"
+  }
+]

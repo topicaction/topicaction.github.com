@@ -16,38 +16,41 @@
 
     show: function(actionParam) {
       var self = this;
-      var action = TA.Actions.findByParam(actionParam);
-      var indexView;
+      var action = TA.Actions.findByParam(actionParam);;
+      var view = self.topicShowView();
       TA.Console.log("routed to show", action);
 
       if (self.cohort().isControl()) {
         window.location = action.get('url');
       } else {
-        indexView = self.view();
-        indexView.fadeOut(function() {
+        view.fadeOut(function() {
           var actionView = new TA.ActionShowView(_.extend(self.options, { model: action, id: 'act-now' }));
-          actionView.displayAfter(indexView.el);
+          actionView.displayAfter(view.el);
         });
       }
     },
 
     index: function() {
-      this.view().render();
+      var self = this;
+      if (self.pathname() == "/") { return new TA.TopicIndexView(); }
+
+      self.topicShowView().render();
+      return null;
     },
 
-    view: function(topic) {
+    topicShowView: function() {
       var self = this;
-
-      // Visiting root is edge case so we don't cache the view
-      if (location.pathname == "/") { return new TA.TopicIndexView(); }
-
       if (!self._view) {
         // Cache the topic show page
-        var topic = TA.Topics.findByPathname(location.pathname);
+        var topic = TA.Topics.findByPathname(self.pathname());
         self._view = new TA.TopicShowView({ model: topic });
       }
 
       return self._view;
+    },
+
+    pathname: function() {
+      return window.location.pathname;
     }
 
   }, {
