@@ -3,6 +3,11 @@
 .right { float:right;}
 .bold { font-weight:bold; }
 
+
+/* z-index*/
+#header { z-index: 10000; }
+#user   { z-index: 10001; }
+
 /* Top Bar*/
 #header {
   height: 70px;
@@ -28,7 +33,6 @@
   position: static;
   right: 0;
   top: 0;
-  z-index: 10000;
 }
 .topbar .container { position:relative; }
 .topbar h1, .topbar h2 {

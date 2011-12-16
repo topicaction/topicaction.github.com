@@ -6,6 +6,18 @@
   //   escape      : /\{-([\s\S]+?)-\}/g
   // };
 
+  TA.UserHeader = Backbone.View.extend({
+    initialize: function() {
+      this.render();
+    },
+
+    render: function() {
+      var self = this;
+      $(self.el).html($("#user-header-template").html());
+      return self;
+    }
+  });
+
   TA.TopicHeader = Backbone.View.extend({
     initialize: function() {
       _.bindAll(this, 'render');
