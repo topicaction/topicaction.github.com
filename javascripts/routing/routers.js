@@ -2,9 +2,22 @@
 
   TA.ActionsRouter = Backbone.Router.extend({
     initialize: function(options) {
-      this.options = options || {};
+      var self = this;
+      self.options = options || {};
 
       $("#header").after(new TA.UserHeader({ id: "#user" }).el);
+
+      self.
+        bind("route:getTopicActions", function() {
+          self.$action().empty();
+        }).
+        bind("route:getMyActions", function() {
+          self.$action().empty();
+          self.$topic().fadeOut();
+        }).
+        bind("route:getAction", function() {
+          self.$topic().fadeOut();
+        });
     },
 
     cohort: function() {
@@ -23,8 +36,7 @@
       var self = this;
       var topic = findTopic();
 
-      $("#action").empty();                                                       // Clean up previous view
-      $('#header .container').html(new TA.TopicHeader({ model: topic }).el);      // Set new header
+      self.$header().html(new TA.TopicHeader({ model: topic }).el);      // Set new header
       self.topicShowView(topic);                                                  // Set main content
 
       return null;
@@ -33,9 +45,6 @@
     getMyActions: function() {
       var self = this;
       var topic = findTopic();
-
-      $("#action").empty();
-      $("#topic").fadeOut();
     },
 
     getAction: function(actionParam) {
@@ -48,11 +57,10 @@
       if (self.cohort().isControl()) {
         navigateOffSite(action.get('url'));
       } else {
-        self.topicShowView().fadeOut();                                           // Clean up previous view
-        $("#header .container").html(new TA.ActionHeader({ model: action, }).el);  // Set new header
+        self.$header().html(new TA.ActionHeader({ model: action }).el);  // Set new header
         viewOptions = _.extend(self.options, { model: action, id: 'act-now' });
         actionView = new TA.ActionShowView(viewOptions);                          // Set main content
-        $("#action").html(actionView.el);
+        self.$action().html(actionView.el);
       }
     },
 
@@ -65,6 +73,18 @@
       } else {
         return self._view.render();
       }
+    },
+
+    $header: function() {
+      return $("#header .container");
+    },
+
+    $action: function() {
+      return $('#action');
+    },
+
+    $topic: function() {
+      return $('#topic');
     }
 
   }, {
