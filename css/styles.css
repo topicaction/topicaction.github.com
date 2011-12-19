@@ -63,6 +63,32 @@
   color:black;
   font-size:1.5em;
 }
+
+.btn  {
+  color: #064F98;
+  background-color:#CACACA;
+  background-image:-khtml-gradient(linear, left top, left bottom, from(#FDFDFD), to(#CACACA));
+  background-image:-moz-linear-gradient(top, #FDFDFD, #CACACA);
+  background-image:-ms-linear-gradient(top, #FDFDFD, #CACACA);
+  background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #FDFDFD), color-stop(100%, #CACACA));
+  background-image:-webkit-linear-gradient(top, #FDFDFD, #CACACA);
+  background-image:-o-linear-gradient(top, #FDFDFD, #CACACA);
+  background-image:linear-gradient(top, #FDFDFD, #CACACA);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FDFDFD', endColorstr='#CACACA', GradientType=0);
+}
+.btn:hover {
+  color: #000000;
+  background-color:#E0E0E0;
+  background-image:-khtml-gradient(linear, left top, left bottom, from(#FFFFFF), to(#E0E0E0));
+  background-image:-moz-linear-gradient(top, #FFFFFF, #E0E0E0);
+  background-image:-ms-linear-gradient(top, #FFFFFF, #E0E0E0);
+  background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFFFFF), color-stop(100%, #E0E0E0));
+  background-image:-webkit-linear-gradient(top, #FFFFFF, #E0E0E0);
+  background-image:-o-linear-gradient(top, #FFFFFF, #E0E0E0);
+  background-image:linear-gradient(top, #FFFFFF, #E0E0E0);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#E0E0E0', GradientType=0);
+}
+
 .btn.success,.alert-message.success{
   background-color:#82B01D;
   background-image:-khtml-gradient(linear, left top, left bottom, from(#C4E668), to(#82B01D));
@@ -77,6 +103,7 @@
   text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
   border-color:#82B01D #82B01D #3d773d;
   border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: #000000;
 }
 .btn.success:hover,.alert-message.success:hover {
   background-color:#8FBF21;
@@ -239,8 +266,8 @@ ul, ol {
   display: inline-block;
 }
 
-#header a.add-action { display:none; }
-.testing-2 #header a.add-action,
-.save-for-later #header a.add-action { display:block; }
+#do-it-later-link { display:none; }
+.testing-2 #do-it-later-link,
+.do-it-later #do-it-later-link { display:block; }
 
 #my-actions-link { display:none; }
