@@ -1,0 +1,14 @@
+[
+  {
+    "className"   : "control-group",
+    "displayName" : "Control Group"
+  },
+  {
+    "className"   : "did-it-only",
+    "displayName" : "Did it only"
+  },
+  {
+    "className"   : "do-it-later",
+    "displayName" : "Do it later"
+  }
+]
