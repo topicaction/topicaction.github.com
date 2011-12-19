@@ -5,6 +5,10 @@
       var self = this;
       if (self._actions) return self._actions;
       return (self._actions = new TA.ActionCollection(TA.Actions.findAllByTopic(self)));
+    },
+
+    actionType: function() {
+      return this.get('action_type');
     }
 
   });

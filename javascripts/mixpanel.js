@@ -13,11 +13,19 @@ TA.Mixpanel.prototype = {
   },
 
   trackPageView: function() {
-    this.track('page viewed', {'page name' : document.title, 'url' : window.location.pathname});
+    this.track('page viewed', this.baseOptions());
+  },
+
+  trackActionView: function(action) {
+    this.track('action viewed', _.extend(this.baseOptions(), { 'type': action.type(), 'src': action.src() }));
   },
 
   trackClick: function(eventName) {
-    this.track(eventName, {'page name' : document.title, 'url' : window.location.pathname});
+    this.track(eventName, this.baseOptions());
+  },
+
+  baseOptions: function() {
+    return {'page name' : document.title, 'url' : window.location.pathname};
   },
 
   track: function(eventName, options) {

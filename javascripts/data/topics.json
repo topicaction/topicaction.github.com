@@ -50,11 +50,13 @@
   {
     "title"       : "Stop Bullying",
     "description" : "Actions you can do today to help stop bullying.",
-    "pathname"    : "/stop-bullying-v.html"
+    "pathname"    : "/stop-bullying-v.html",
+    "action_type" : "offline"
   },
   {
     "title"       : "Stop Bullying",
     "description" : "Actions you can do to help stop bullying.",
-    "pathname"    : "/stop-bullying-r.html"
+    "pathname"    : "/stop-bullying-r.html",
+    "action_type" : "online"
   }
 ]
