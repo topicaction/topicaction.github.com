@@ -51,7 +51,7 @@
 
     getAction: function(actionParam) {
       var self = this;
-      var action = TA.Actions.findByParam(actionParam);
+      var action = TA.Actions.findByPathnameAndParam(pathname(), actionParam);
       var actionView, viewOptions;
 
       TA.Console.log("routed to getAction", action);

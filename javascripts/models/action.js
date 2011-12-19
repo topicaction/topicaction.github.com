@@ -14,7 +14,7 @@
     },
 
     type: function() {
-      return this.topic().actionType() || 'blank';
+      return this.get('type') || this.topic().actionType() || 'blank';
     }
   });
 
@@ -25,6 +25,10 @@
 
     findByParam: function(param) {
       return this.find(function(action) { return action.get("param") == param; });
+    },
+
+    findByPathnameAndParam: function(pathname, param) {
+      return this.find(function(action) { return action.get("topic_pathname") == pathname && action.get("param") == param; });
     },
 
     findAllByTopic: function(topic) {
