@@ -3,7 +3,7 @@
   TA.ActionsRouter = Backbone.Router.extend({
     initialize: function(user) {
       var self = this;
-      self.current_user = user || {};
+      self.currentUser = user || {};
 
       $("#header").after(new TA.UserHeader({ id: "#user" }).el);
 
@@ -21,13 +21,14 @@
     },
 
     cohort: function() {
-      return this.current_user.cohort;
+      return this.currentUser.cohort;
     },
 
     routes: {
-      ""                    : "getTopicActions",
-      "act-now/:actionParam": "getAction",
-      "my-actions"          : "getMyActions"
+      ""                        : "getTopicActions",
+      "act-now/:actionParam"    : "getAction",
+      "my-actions"              : "getMyActions",
+      "act-later/:actionParam"  : "getActLater"
     },
 
     getTopicActions: function() {
@@ -55,13 +56,13 @@
       var actionView, viewOptions;
 
       TA.Console.log("routed to getAction", action);
-      self.current_user.mixpanel.trackActionView(action);
+      self.currentUser.mixpanel.trackActionView(action);
 
       if (self.cohort().isControl()) {
         navigateOffSite(action.src());
       } else {
-        self.$header().html(new TA.ActionHeader({ model: action }).el);  // Set new header
-        viewOptions = _.extend(self.current_user, { model: action, id: 'act-now' });
+        self.$header().html(new TA.ActionHeader({ model: action }).el);           // Set new header
+        viewOptions = _.extend(self.currentUser, { model: action, id: 'act-now' });
         actionView = new TA.ActionShowView(viewOptions);                          // Set main content
         self.$action().html(actionView.el);
       }
@@ -76,6 +77,22 @@
       } else {
         return self._view.render();
       }
+    },
+
+    getActLater: function(actionParam) {
+      var self = this;
+      var action = TA.Actions.findByPathnameAndParam(pathname(), actionParam);
+      self.currentUser.mixpanel.trackClick('Do later');
+
+      // renders in fancybox
+
+      new TA.DoActionLaterView({
+        model: action,
+        onComplete: function() {
+          self.navigate('act-now/' + actionParam);
+        }
+      });
+      return false;
     },
 
     $header: function() {

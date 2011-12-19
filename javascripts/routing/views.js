@@ -42,7 +42,6 @@
 
     events: {
       "click a.did-it"      : "didIt",
-      "click a.add-action"  : "doLater",
       "click a.view-index"  : "viewIndex"
     },
 
@@ -62,12 +61,8 @@
       TA.user.mixpanel.trackClick('I did it');
       $(event.target).text('Done!');
       return false;
-    },
-
-    doLater: function() {
-      TA.user.mixpanel.trackClick('Do later');
-      return false;
     }
+
   });
 
   TA.TopicIndexView = Backbone.View;
@@ -158,6 +153,22 @@
       }, 1);
     }
 
+  });
+
+  TA.DoActionLaterView = Backbone.View.extend({
+    initialize: function(options) {
+      options = options || {};
+      var self = this;
+      self.onComplete = options.onComplete || function() {};
+      self.render();
+    },
+
+    render: function() {
+      var self = this;
+      var html = _.template($("#act-later-template").html(), { action: this.model });
+      $.fancybox(html, { onClosed: this.onComplete });
+      return this;
+    }
   });
 
 })();

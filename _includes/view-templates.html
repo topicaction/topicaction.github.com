@@ -8,7 +8,7 @@
   <h2><%= action.topicTitle() %>: <span class='font-normal'><%= action.escape('title') %></span></h2>
   <ul class="nav">
     <li><a class='btn success bold did-it' href="#did-it">I did it!</a></li>
-    <li><a class='add-action btn' href="#add-action">I'll do this later</a></li>
+    <li><a class='btn act-later-link' href="#act-later/<%= action.get('param') %>">I'll do this later</a></li>
   </ul>
 </script>
 <script id='action-list-template' type="text/template" charset="utf-8">
@@ -22,4 +22,7 @@
       </li>
     <% }); %>
   </ul>
+</script>
+<script id='act-later-template' type="text/template" charset="utf-8">
+  <h3>I'll do <%= action.escape('title') %> later</h3>
 </script>

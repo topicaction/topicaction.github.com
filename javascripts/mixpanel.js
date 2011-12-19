@@ -29,7 +29,8 @@ TA.Mixpanel.prototype = {
   },
 
   track: function(eventName, options) {
+    options = _.extend(this.baseOptions(), options);
     TA.Console.log('mixpanel.track', eventName, options);
-    this.mpq.track(eventName, _.extend(this.baseOptions(), options));
+    this.mpq.track(eventName, options);
   }
 };

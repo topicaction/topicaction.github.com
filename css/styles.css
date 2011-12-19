@@ -266,8 +266,8 @@ ul, ol {
   display: inline-block;
 }
 
-#do-it-later-link { display:none; }
-.testing-2 #do-it-later-link,
-.do-it-later #do-it-later-link { display:block; }
+.topbar a.act-later-link { display:none; }
+.testing-2 .topbar a.act-later-link,
+.do-it-later .topbar a.act-later-link { display:block; }
 
 #my-actions-link { display:none; }
