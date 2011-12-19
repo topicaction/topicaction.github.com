@@ -227,3 +227,5 @@ ul, ol {
 #header a.add-action { display:none; }
 .testing-2 #header a.add-action,
 .save-for-later #header a.add-action { display:block; }
+
+#my-actions-link { display:none; }

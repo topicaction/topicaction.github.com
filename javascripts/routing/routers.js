@@ -32,6 +32,7 @@
 
     getTopicActions: function() {
       if (pathname() == "/") { return new TA.TopicIndexView(); }                  // This could be an action on a separate "TopicsRouter"
+      TA.Console.log("routed to getTopicActions", pathname());
 
       var self = this;
       var topic = findTopic();
@@ -45,6 +46,7 @@
     getMyActions: function() {
       var self = this;
       var topic = findTopic();
+      TA.Console.log("routed to getMyActions");
     },
 
     getAction: function(actionParam) {
@@ -52,7 +54,7 @@
       var action = TA.Actions.findByParam(actionParam);
       var actionView, viewOptions;
 
-      TA.Console.log("routed to show", action);
+      TA.Console.log("routed to getAction", action);
       self.current_user.mixpanel.trackActionView(action);
 
       if (self.cohort().isControl()) {
