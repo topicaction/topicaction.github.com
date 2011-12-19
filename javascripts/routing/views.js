@@ -130,7 +130,7 @@
       var $iframe;
 
       // self.preventIframeBust(); // Trial solution to iframe busting sites
-      $iframe = self.renderIframe(self.model.get("url"), $el.height());
+      $iframe = self.renderIframe(self.model.src(), $el.height());
       $el.html($iframe);
 
       return self;

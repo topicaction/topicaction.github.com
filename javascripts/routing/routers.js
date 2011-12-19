@@ -1,9 +1,9 @@
 (function() {
 
   TA.ActionsRouter = Backbone.Router.extend({
-    initialize: function(options) {
+    initialize: function(user) {
       var self = this;
-      self.options = options || {};
+      self.current_user = user || {};
 
       $("#header").after(new TA.UserHeader({ id: "#user" }).el);
 
@@ -21,7 +21,7 @@
     },
 
     cohort: function() {
-      return this.options.cohort;
+      return this.current_user.cohort;
     },
 
     routes: {
@@ -53,12 +53,13 @@
       var actionView, viewOptions;
 
       TA.Console.log("routed to show", action);
+      self.current_user.mixpanel.trackActionView(action);
 
       if (self.cohort().isControl()) {
-        navigateOffSite(action.get('url'));
+        navigateOffSite(action.src());
       } else {
         self.$header().html(new TA.ActionHeader({ model: action }).el);  // Set new header
-        viewOptions = _.extend(self.options, { model: action, id: 'act-now' });
+        viewOptions = _.extend(self.current_user, { model: action, id: 'act-now' });
         actionView = new TA.ActionShowView(viewOptions);                          // Set main content
         self.$action().html(actionView.el);
       }
@@ -89,8 +90,8 @@
 
   }, {
 
-    start: function(options) {
-      new this(options);
+    start: function(user) {
+      new this(user);
       Backbone.history.start();
     }
 
@@ -105,7 +106,7 @@
   }
 
   function navigateOffSite(url) {
-    window.location = action.get('url');
+    window.location = action.src();
   }
 
 })();

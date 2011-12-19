@@ -7,6 +7,14 @@
 
     topicTitle: function() {
       return this.topic().get('title');
+    },
+
+    src: function() {
+      return this.get('src');
+    },
+
+    type: function() {
+      return this.topic().actionType() || 'blank';
     }
   });
 
