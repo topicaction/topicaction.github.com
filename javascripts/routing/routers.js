@@ -108,7 +108,7 @@
   }
 
   function navigateOffSite(url) {
-    window.location = action.src();
+    window.location = url;
   }
 
 })();

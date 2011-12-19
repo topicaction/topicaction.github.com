@@ -13,15 +13,15 @@ TA.Mixpanel.prototype = {
   },
 
   trackPageView: function() {
-    this.track('page viewed', this.baseOptions());
+    this.track('page viewed');
   },
 
-  trackActionView: function(action) {
-    this.track('action viewed', _.extend(this.baseOptions(), { 'type': action.type(), 'src': action.src() }));
+  trackActionView: function(action, options) {
+    this.track('action viewed', _.extend({ 'type': action.type(), 'src': action.src() }, options));
   },
 
-  trackClick: function(eventName) {
-    this.track(eventName, this.baseOptions());
+  trackClick: function(eventName, options) {
+    this.track(eventName, options);
   },
 
   baseOptions: function() {
@@ -30,6 +30,6 @@ TA.Mixpanel.prototype = {
 
   track: function(eventName, options) {
     TA.Console.log('mixpanel.track', eventName, options);
-    this.mpq.track(eventName, options);
+    this.mpq.track(eventName, _.extend(this.baseOptions(), options));
   }
 };

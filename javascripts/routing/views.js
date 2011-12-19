@@ -42,7 +42,7 @@
 
     events: {
       "click a.did-it"      : "didIt",
-      "click a.add-action"  : "saveForLater",
+      "click a.add-action"  : "doLater",
       "click a.view-index"  : "viewIndex"
     },
 
@@ -64,9 +64,8 @@
       return false;
     },
 
-    saveForLater: function() {
-      TA.user.mixpanel.trackClick('Save for later');
-      TA.saveForLater();
+    doLater: function() {
+      TA.user.mixpanel.trackClick('Do later');
       return false;
     }
   });
