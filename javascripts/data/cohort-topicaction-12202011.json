@@ -1,0 +1,12 @@
+[
+  {
+    "className"   : "do-later",
+    "displayName" : "Do Later",
+    "buttonText"  : "I'll do this later"
+  },
+  {
+    "className"   : "send-reminder",
+    "displayName" : "Send Reminder",
+    "buttonText"  : "Send me a reminder"
+  }
+]

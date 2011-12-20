@@ -3,7 +3,11 @@
   TA.Cohort = Backbone.Model.extend({
 
     isControl: function() {
-      return !!this.get('className').match(/control/);
+      return !!this.className().match(/control/);
+    },
+
+    className: function() {
+      return this.get('className');
     }
 
   });
@@ -12,7 +16,7 @@
   TA.CohortCollection = Backbone.Collection.extend({
     model: TA.Cohort,
 
-    storageKey: 'topicaction-12122011',
+    storageKey: 'topicaction-12202011',
 
     findRandom: function() {
       return this.at(Math.floor(Math.random() * this.length));

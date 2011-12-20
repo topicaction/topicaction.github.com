@@ -1,14 +1,17 @@
 [
   {
     "className"   : "testing-1",
-    "displayName" : "Testing 1"
+    "displayName" : "Testing 1",
+    "buttonText"  : "No text given"
   },
   {
     "className"   : "testing-2",
-    "displayName" : "Testing 2"
+    "displayName" : "Testing 2",
+    "buttonText"  : "Send me a reminder"
   },
   {
     "className"   : "control-testing-3",
-    "displayName" : "Testing 3"
+    "displayName" : "Testing 3",
+    "buttonText"  : "No text given"
   }
 ]

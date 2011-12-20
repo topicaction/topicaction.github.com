@@ -1,17 +1,18 @@
 (function(){
+  var clickCount = 0;
 
   $.fn.trackClicks = function(options) {
     options = options || {};
     var mixpanel = options.mixpanel;
 
   	return this.on('click', 'a', function ( e ) {
-  		var a = $(this);
+  		var $anchor = $(this);
       // onclick
       // make all links colored
-      // assign saveID()
-      if (mixpanel) trackMixpanel(mixpanel, a);
-  		saveID(a.attr('href'));
-  		a.visited();
+      // assign saveID();
+      if (mixpanel) trackMixpanel(mixpanel, { url: $anchor.attr("href") });
+  		saveID($anchor.attr('href'));
+  		$anchor.visited();
     });
   };
 
@@ -31,8 +32,9 @@
     });
   };
 
-  function trackMixpanel(mixpanel, $anchor) {
-    mixpanel.track('clicked link', { url: $anchor.attr("href") });
+  function trackMixpanel(mixpanel, options) {
+    clickCount += 1;
+    mixpanel.track('clicked link', _.extend(options, { count : clickCount }));
   }
 
   function saveID(id) {

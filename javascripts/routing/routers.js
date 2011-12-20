@@ -61,9 +61,9 @@
       if (self.cohort().isControl()) {
         navigateOffSite(action.src());
       } else {
-        self.$header().html(new TA.ActionHeader({ model: action }).el);           // Set new header
+        self.$header().html(new TA.ActionHeader({ model: action }).el);               // Set new header
         viewOptions = _.extend(self.currentUser, { model: action, id: 'act-now' });
-        actionView = new TA.ActionShowView(viewOptions);                          // Set main content
+        actionView = new TA.ActionShowView(viewOptions);                              // Set main content
         self.$action().html(actionView.el);
       }
     },
@@ -82,7 +82,6 @@
     getActLater: function(actionParam) {
       var self = this;
       var action = TA.Actions.findByPathnameAndParam(pathname(), actionParam);
-      self.currentUser.mixpanel.trackClick('Do later');
 
       // renders in fancybox
 
@@ -92,7 +91,6 @@
           self.navigate('act-now/' + actionParam);
         }
       });
-      return false;
     },
 
     $header: function() {

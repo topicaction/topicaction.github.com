@@ -6,6 +6,12 @@
   //   escape      : /\{-([\s\S]+?)-\}/g
   // };
 
+  $.fn.disableLink = function() {
+    this.addClass('disabled').click(function() {
+      return false;
+    });
+  };
+
   TA.UserHeader = Backbone.View.extend({
     initialize: function() {
       this.render();
@@ -36,19 +42,20 @@
   TA.ActionHeader = Backbone.View.extend({
     initialize: function(options) {
       var self = this;
-      _.bindAll(self, 'viewIndex', 'render', 'didIt', 'viewIndex');
+      _.bindAll(self, 'viewIndex', 'render', 'didIt', 'doLater', 'viewIndex');
       self.render();
     },
 
     events: {
-      "click a.did-it"      : "didIt",
-      "click a.view-index"  : "viewIndex"
+      "click a.act-later-link"  : "doLater",
+      "click a.did-it-link"     : "didIt",
+      "click a.view-index"      : "viewIndex"
     },
 
     render: function() {
       var self = this;
       var $el  = $(self.el);
-      var html = _.template($('#act-now-header-template').html(), { action: self.model });
+      var html = _.template($('#act-now-header-template').html(), { action: self.model, cohort: TA.user.cohort });
       $el.html(html);
       return self;
     },
@@ -58,9 +65,16 @@
     },
 
     didIt: function(event) {
-      TA.user.mixpanel.trackClick('I did it');
-      $(event.target).text('Done!');
+      var $target = $(event.target);
+      TA.user.mixpanel.track('clicked button', { text: $target.text() });
+      $target.text('Done!');
+      $('.btn.act-later-link').disableLink();   // disable other button
       return false;
+    },
+
+    doLater: function(event) {
+      TA.user.mixpanel.track('clicked button', { text: $(event.target).text() });
+      $('.btn.did-it-link').disableLink();  // disable other button
     }
 
   });
@@ -165,7 +179,7 @@
 
     render: function() {
       var self = this;
-      var html = _.template($("#act-later-template").html(), { action: this.model });
+      var html = _.template($("#wufoo-form-template").html());
       $.fancybox(html, { onClosed: this.onComplete });
       return this;
     }

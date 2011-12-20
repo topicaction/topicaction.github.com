@@ -7,8 +7,8 @@
   <a id="back-to-all-link" class='view-index header-link' href="#">Back to all actions</a>
   <h2><%= action.topicTitle() %>: <span class='font-normal'><%= action.escape('title') %></span></h2>
   <ul class="nav">
-    <li><a class='btn success bold did-it' href="#did-it">I did it!</a></li>
-    <li><a class='btn act-later-link' href="#act-later/<%= action.get('param') %>">I'll do this later</a></li>
+    <li><a class='btn success bold did-it-link' href="#">I did it!</a></li>
+    <li><a class='btn act-later-link' href="#act-later/<%= action.get('param') %>"><%= cohort.get('buttonText') %></a></li>
   </ul>
 </script>
 <script id='action-list-template' type="text/template" charset="utf-8">
@@ -25,4 +25,9 @@
 </script>
 <script id='act-later-template' type="text/template" charset="utf-8">
   <h3>I'll do <%= action.escape('title') %> later</h3>
+</script>
+<script id='wufoo-form-template' type="text/template" charset="utf-8">
+  <div class="padding">
+    <iframe height="323" allowTransparency="true" frameborder="0" scrolling="no" style="width:400px;border:none"  src="http://challengepost.wufoo.com/embed/z7x1w3/"><a href="http://challengepost.wufoo.com/forms/z7x1w3/" title="I'll do this later: send me a reminder">Fill out my Wufoo form!</a></iframe>
+  </div>
 </script>

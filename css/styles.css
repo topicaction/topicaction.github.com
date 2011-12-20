@@ -54,11 +54,11 @@
 .topbar h2 .font-normal { font-weight:normal; }
 
 .topbar a { color:black; }
-.topbar .nav { float:left; margin-top:14px; }
+.topbar .nav { float:left; margin-top:16px; }
 .topbar .nav li { padding-left:14px; }
 .topbar .nav p { color: white; text-shadow: none; }
 .topbar .nav .btn {
-  padding: 11px 15px;
+  padding: 9px 11px;
   text-shadow: 0 1px white;
   color:black;
   font-size:1.5em;
@@ -77,7 +77,7 @@
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FDFDFD', endColorstr='#CACACA', GradientType=0);
 }
 .btn:hover {
-  color: #000000;
+/*  color: #000000;
   background-color:#E0E0E0;
   background-image:-khtml-gradient(linear, left top, left bottom, from(#FFFFFF), to(#E0E0E0));
   background-image:-moz-linear-gradient(top, #FFFFFF, #E0E0E0);
@@ -87,6 +87,7 @@
   background-image:-o-linear-gradient(top, #FFFFFF, #E0E0E0);
   background-image:linear-gradient(top, #FFFFFF, #E0E0E0);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#E0E0E0', GradientType=0);
+*/
 }
 
 .btn.success,.alert-message.success{
@@ -106,7 +107,7 @@
   color: #000000;
 }
 .btn.success:hover,.alert-message.success:hover {
-  background-color:#8FBF21;
+/*  background-color:#8FBF21;
   background-image:-khtml-gradient(linear, left top, left bottom, from(#E0FD95), to(#8FBF21));
   background-image:-moz-linear-gradient(top, #E0FD95, #8FBF21);
   background-image:-ms-linear-gradient(top, #E0FD95, #8FBF21);
@@ -115,6 +116,7 @@
   background-image:-o-linear-gradient(top, #E0FD95, #8FBF21);
   background-image:linear-gradient(top, #E0FD95, #8FBF21);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#E0FD95', endColorstr='#8FBF21', GradientType=0);
+*/
 }
 
 a.header-link {
@@ -233,6 +235,10 @@ ul, ol {
 	display: block;
 }
 
+.padding {
+  padding: 20px;
+}
+
 /* Cohort css */
 #social-buttons { display:none; }
 .social-buttons #social-buttons { display:block; }
@@ -268,6 +274,7 @@ ul, ol {
 
 .topbar a.act-later-link { display:none; }
 .testing-2 .topbar a.act-later-link,
-.do-it-later .topbar a.act-later-link { display:block; }
+.send-reminder .topbar a.act-later-link,
+.do-later .topbar a.act-later-link { display:block; }
 
 #my-actions-link { display:none; }
