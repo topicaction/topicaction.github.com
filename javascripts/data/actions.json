@@ -19,7 +19,7 @@
   },
   {
     "param"         : "move-to-credit-union",
-    "title"         : "Move your money from to a credit union",
+    "title"         : "Move your money to a credit union",
     "src"           : "http://moveyourmoneyproject.org/find-bankcredit-union",
     "user_count"    : 83,
     "relevancy"     : 4.6,
@@ -28,7 +28,7 @@
   },
   {
     "param"         : "send-credit-card-offers-back",
-    "title"         : "Send unsolicited credit card offers back to the banks",
+    "title"         : "Return unsolicited credit card offers",
     "src"           : "http://www.youtube.com/embed/2JlxbKtBkGM",
     "user_count"    : 93,
     "relevancy"     : 4.1,
@@ -37,7 +37,7 @@
   },
   {
     "param"         : "add-a-twibbon",
-    "title"         : "Add a Twibbon (twitter ribbon) to your twitter picture",
+    "title"         : "Add a Twibbon to your twitter picture",
     "src"           : "http://twibbon.com/join/i-support-occupy-wall-st",
     "user_count"    : 38,
     "relevancy"     : 3.7,
@@ -159,19 +159,21 @@
     "topic_pathname": "/stop-sopa.html"
   },
   {
-    "param"         : "bullying-facts",
-    "title"         : "Get the facts about bullying",
-    "src"           : "http://www.stopbullying.gov/",
-    "user_count"    : 83,
-    "relevancy"     : 4.6,
+    "param"         : "bullying-quiz",
+    "title"         : "Take a bullying quiz and share your results",
+    "src"           : "http://www.education.com/quiz/bullying-myths/",
+    "user_count"    : 59,
+    "relevancy"     : 3.1,
+	"type"			: "online",
     "topic_pathname": "/stop-bullying.html"
   },
   {
-    "param"         : "anti-bullying-pledge",
-    "title"         : "Sign the Anti-Bullying pledge",
-    "src"           : "http://www.drphil.com/page/students/",
-    "user_count"    : 93,
-    "relevancy"     : 4.1,
+    "param"         : "trevor-volunteer",
+    "title"         : "Volunteer to be a lifeline counselor",
+    "src"           : "http://www.thetrevorproject.org/volunteers/opportunities",
+    "user_count"    : 11,
+    "relevancy"     : 3.2,
+	"type"			: "offline",
     "topic_pathname": "/stop-bullying.html"
   },
   {
@@ -180,22 +182,25 @@
     "src"           : "http://www.itgetsbetter.org",
     "user_count"    : 47,
     "relevancy"     : 3.8,
+	"type"			: "online",
     "topic_pathname": "/stop-bullying.html"
   },
   {
-    "param"         : "self-defense-tips",
-    "title"         : "Get some basic self-defense tips",
-    "src"           : "http://lifehacker.com/5825528/basic-self+defense-moves-anyone-can-do-and-everyone-should-know_",
+    "param"         : "school-bullying-petition",
+    "title"         : "Host a petition-signing event at school",
+    "src"           : "http://www.pacer.org/bullying/resources/activities/toolkits/petition-toolkit.asp",
     "user_count"    : 38,
     "relevancy"     : 3.7,
+	"type"			: "offline",
     "topic_pathname": "/stop-bullying.html"
   },
   {
-    "param"         : "stop-bullying-comic",
-    "title"         : "Make your own Stop Bullying comic",
-    "src"           : "http://stopbullying.bitstrips.com/challenge/",
-    "user_count"    : 59,
-    "relevancy"     : 3.1,
+    "param"         : "no-name-calling-materials",
+    "title"         : "Distribute posters for No Name-Calling week",
+    "src"           : "http://www.nonamecallingweek.org/cgi-bin/iowa/all/resources/record/112.html",
+    "user_count"    : 83,
+    "relevancy"     : 4.6,
+	"type"			: "offline",
     "topic_pathname": "/stop-bullying.html"
   },
   {
