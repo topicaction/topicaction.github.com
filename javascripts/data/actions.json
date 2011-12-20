@@ -23,6 +23,7 @@
     "src"           : "http://moveyourmoneyproject.org/find-bankcredit-union",
     "user_count"    : 83,
     "relevancy"     : 4.6,
+    "type"			: "offline",
     "topic_pathname": "/occupy-wall-st.html"
   },
   {
@@ -31,14 +32,7 @@
     "src"           : "http://www.youtube.com/embed/2JlxbKtBkGM",
     "user_count"    : 93,
     "relevancy"     : 4.1,
-    "topic_pathname": "/occupy-wall-st.html"
-  },
-  {
-    "param"         : "attend-a-rally",
-    "title"         : "Attend a rally",
-    "src"           : "http://en.wikipedia.org/wiki/List_of_Occupy_movement_protest_locations",
-    "user_count"    : 47,
-    "relevancy"     : 3.8,
+    "type"			: "offline",
     "topic_pathname": "/occupy-wall-st.html"
   },
   {
@@ -47,6 +41,16 @@
     "src"           : "http://twibbon.com/join/i-support-occupy-wall-st",
     "user_count"    : 38,
     "relevancy"     : 3.7,
+    "type"			: "online",
+    "topic_pathname": "/occupy-wall-st.html"
+  },
+  {
+    "param"         : "attend-a-rally",
+    "title"         : "Attend a rally",
+    "src"           : "http://en.wikipedia.org/wiki/List_of_Occupy_movement_protest_locations",
+    "user_count"    : 47,
+    "relevancy"     : 3.8,
+    "type"			: "offline",
     "topic_pathname": "/occupy-wall-st.html"
   },
   {
@@ -55,6 +59,7 @@
     "src"           : "http://occupywallst.org/donate/",
     "user_count"    : 11,
     "relevancy"     : 3.2,
+    "type"			: "online",
     "topic_pathname": "/occupy-wall-st.html"
   },
   {
