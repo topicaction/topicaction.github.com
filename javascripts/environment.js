@@ -11,7 +11,7 @@ TA.Env = {
 
 TA.Console = {
   log: function() {
-    // if (!TA.Env.test()) return;
+    if (!TA.Env.test()) return;
 
     console.log.apply(console, arguments);
   }

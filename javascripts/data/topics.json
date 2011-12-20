@@ -45,6 +45,7 @@
     "title"       : "Stop Bullying",
     "description" : "Actions you can do today to help stop bullying.",
     "pathname"    : "/stop-bullying.html",
+    "abbr"        : "SB",
     "action_type" : null
   },
   {

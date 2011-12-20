@@ -9,6 +9,10 @@
       return this.topic().get('title');
     },
 
+    topicAbbr: function() {
+      return this.topic().get('abbr') || this.topicTitle();
+    },
+
     src: function() {
       return this.get('src');
     },

@@ -5,7 +5,7 @@
 </script>
 <script id='act-now-header-template' type="text/template" charset="utf-8">
   <a id="back-to-all-link" class='view-index header-link' href="#">Back to all actions</a>
-  <h2><%= action.topicTitle() %>: <span class='font-normal'><%= action.escape('title') %></span></h2>
+  <h2><%= action.topicAbbr() %>: <span class='font-normal'><%= action.escape('title') %></span></h2>
   <ul class="nav">
     <li><a class='btn success bold did-it-link' href="#">I did it!</a></li>
     <li><a class='btn act-later-link' href="#act-later/<%= action.get('param') %>"><%= cohort.get('buttonText') %></a></li>
