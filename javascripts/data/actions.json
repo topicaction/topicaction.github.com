@@ -19,7 +19,7 @@
   },
   {
     "param"         : "move-to-credit-union",
-    "title"         : "Move your money from a big bank to a credit union",
+    "title"         : "Move your money from to a credit union",
     "src"           : "http://moveyourmoneyproject.org/find-bankcredit-union",
     "user_count"    : 83,
     "relevancy"     : 4.6,
@@ -88,7 +88,7 @@
   },
   {
     "param"         : "move-to-credit-union",
-    "title"         : "Move your money from a big bank to a credit union",
+    "title"         : "Move your money to a credit union",
     "src"           : "http://moveyourmoneyproject.org/find-bankcredit-union",
     "user_count"    : 83,
     "relevancy"     : 4.6,

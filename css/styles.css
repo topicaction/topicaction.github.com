@@ -3,6 +3,7 @@
 .right { float:right;}
 .bold { font-weight:bold; }
 
+.container { width: 950px; }
 
 /* z-index*/
 #header { z-index: 10000; }
@@ -273,6 +274,7 @@ ul, ol {
 }
 
 .topbar a.act-later-link { display:none; }
+.testing-1 .topbar a.act-later-link,
 .testing-2 .topbar a.act-later-link,
 .send-reminder .topbar a.act-later-link,
 .do-later .topbar a.act-later-link { display:block; }

@@ -7,11 +7,8 @@
 
   	return this.on('click', 'a', function ( e ) {
   		var $anchor = $(this);
-      // onclick
-      // make all links colored
-      // assign saveID();
       if (mixpanel) trackMixpanel(mixpanel, { url: $anchor.attr("href") });
-  		saveID($anchor.attr('href'));
+  		saveLink($anchor.attr('href'));
   		$anchor.visited();
     });
   };
@@ -23,8 +20,8 @@
   $.fn.highlightVisitedLinks = function() {
     return this.each(function() {
       var $scope = $(this);
-      if ($.cookie('idCookie')) {
-        var idArray = $.cookie('idCookie').split(',');
+      if (amplify.store('visitedLinks')) {
+        var idArray = amplify.store('visitedLinks').split(',');
         for (var x=0; x<idArray.length; x++) {
           $scope.find('a[href="'+idArray[x]+'"]').visited();
         }
@@ -37,12 +34,9 @@
     mixpanel.track('clicked link', _.extend(options, { count : clickCount }));
   }
 
-  function saveID(id) {
-    if ($.cookie('idCookie')) {
-      $.cookie('idCookie', $.cookie('idCookie') + "," + id);
-    } else {
-      $.cookie('idCookie', id, {expires: 365});
-    }
+  function saveLink(link) {
+    // store visited links as comma-separated string, removing nulls, avoiding duplicates
+    amplify.store('visitedLinks', _([amplify.store('visitedLinks'), link]).chain().compact().unique().value().join(','));
   }
 
 })();

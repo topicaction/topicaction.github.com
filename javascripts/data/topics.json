@@ -21,24 +21,28 @@
     "title"       : "Occupy Wall Street",
     "description" : "Actions you can do today to help support Occupy Wall Street",
     "pathname"    : "/occupy-wall-st.html",
+    "abbr"        : "OWS",
     "action_type" : null
   },
   {
     "title"       : "Occupy Wall St.",
     "description" : "Actions you can do today to help support Occupy Wall Street",
     "pathname"    : "/occupy-wall-st-v.html",
+    "abbr"        : "OWS",
     "action_type" : "online"
   },
   {
     "title"       : "Occupy Wall Street (OWS)",
     "description" : "Actions you can do today to help support Occupy Wall Street",
     "pathname"    : "/occupy-wall-st-r.html",
+    "abbr"        : "OWS",
     "action_type" : "offline"
   },
   {
     "title"       : "Stop SOPA / PIPA",
     "description" : "Actions you can do today to stop SOPA and PIPA from passing.",
     "pathname"    : "/stop-sopa.html",
+    "abbr"        : "OWS",
     "action_type" : null
   },
   {
