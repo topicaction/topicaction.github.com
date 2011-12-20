@@ -29,7 +29,7 @@
   {
     "param"         : "send-credit-card-offers-back",
     "title"         : "Return unsolicited credit card offers",
-    "src"           : "http://www.youtube.com/embed/2JlxbKtBkGM",
+    "src"           : "http://www.youtube.com/watch?feature=player_embedded&v=2JlxbKtBkGM",
     "user_count"    : 93,
     "relevancy"     : 4.1,
     "type"			: "offline",
