@@ -179,7 +179,7 @@
 
     render: function() {
       var self = this;
-      var html = _.template($("#wufoo-form-template").html());
+      var html = _.template($("#wufoo-form-template").html(), { action: this.model });
       $.fancybox(html, { onClosed: this.onComplete });
       return this;
     }
