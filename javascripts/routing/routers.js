@@ -28,7 +28,8 @@
       ""                        : "getTopicActions",
       "act-now/:actionParam"    : "getAction",
       "my-actions"              : "getMyActions",
-      "act-later/:actionParam"  : "getActLater"
+      "act-later/:actionParam"  : "getActLater",
+      "i-did-it/:actionParam"  : "getDoneAction"
     },
 
     getTopicActions: function() {
@@ -92,6 +93,20 @@
         }
       });
     },
+
+
+    getDoneAction: function ( actionParam ) {
+      var self = this
+        , action = TA.Actions.findByPathnameAndParam( pathname(), actionParam );
+
+      new TA.ActionDoneView({
+        model: action,
+        onComplete: function () {
+          self.navigate('act-now/' + actionParam);
+        }
+      });
+    },
+
 
     $header: function() {
       return $("#header .container");

@@ -7,7 +7,7 @@
   <a id="back-to-all-link" class='view-index header-link' href="#">Back to all actions</a>
   <h2><%= action.topicAbbr() %>: <span class='font-normal'><%= action.escape('title') %></span></h2>
   <ul class="nav">
-    <li><a class='btn success bold did-it-link' href="#">I did it!</a></li>
+    <li><a class='btn success bold did-it-link' href="#i-did-it/<%= action.get('param') %>">I did it!</a></li>
     <li><a class='btn act-later-link' href="#act-later/<%= action.get('param') %>"><%= cohort.get('buttonText') %></a></li>
   </ul>
 </script>
@@ -23,8 +23,13 @@
     <% }); %>
   </ul>
 </script>
-<script id='wufoo-form-template' type="text/template" charset="utf-8">
+<script id='wufoo-do-later-template' type="text/template" charset="utf-8">
   <div class="padding">
-    <iframe height="365" allowTransparency="true" frameborder="0" scrolling="no" style="width:400px;border:none"  src="http://challengepost.wufoo.com/embed/z7x1w3/def/field106=<%= action.get('param') %>"><a href="http://challengepost.wufoo.com/forms/z7x1w3/def/field106=<%= action.get('param') %>" title="I'll do this later: send me a reminder">Fill out my Wufoo form!</a></iframe>
+    <iframe height="460" allowTransparency="true" frameborder="0" scrolling="no" style="width:400px;border:none"  src="http://challengepost.wufoo.com/embed/z7x1w3/def/field106=<%= action.get('param') %>"><a href="http://challengepost.wufoo.com/forms/z7x1w3/def/field106=<%= action.get('param') %>" title="I'll do this later: send me a reminder">Fill out my Wufoo form!</a></iframe>
+  </div>
+</script>
+<script id='wufoo-done-template' type="text/template" charset="utf-8">
+  <div class="padding">
+    <iframe height="365" allowTransparency="true" frameborder="0" scrolling="no" style="width:400px;border:none;"  src="http://challengepost.wufoo.com/embed/z7x1q9/def/field106=<%= action.get('param') %>"><a href="http://challengepost.wufoo.com/forms/z7x1q9/def/field106=<%= action.get('param') %>" title="I did it! Keep me posted">Fill out my Wufoo form!</a></iframe>
   </div>
 </script>

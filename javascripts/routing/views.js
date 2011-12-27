@@ -70,10 +70,6 @@
       TA.user.mixpanel.track('clicked button', { text: $target.text() });
       $target.text('Done!');
       $('.btn.act-later-link').disableLink();   // disable other button
-
-      TA.AddAction.iDidIt(); // popup
-
-      return false;
     },
 
     doLater: function(event) {
@@ -183,8 +179,29 @@
 
     render: function() {
       var self = this;
-      var html = _.template($("#wufoo-form-template").html(), { action: this.model });
+      var html = _.template($("#wufoo-do-later-template").html(), { action: this.model });
       $.fancybox(html, { onClosed: this.onComplete });
+      return this;
+    }
+  });
+
+  TA.ActionDoneView = Backbone.View.extend( {
+    initialize: function ( options ) {
+      var self = this;
+
+      options = options || {};
+
+      self.onComplete = options.onComplete || function () {};
+      self.render();
+    },
+
+    render: function () {
+      var self = this
+        , html;
+
+      html = _.template( $( '#wufoo-done-template' ).html(), { action: self.model } );
+
+      $.fancybox(html, { onClosed: self.onComplete });
       return this;
     }
   });

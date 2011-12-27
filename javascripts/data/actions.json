@@ -23,7 +23,7 @@
     "src"           : "http://moveyourmoneyproject.org/find-bankcredit-union",
     "user_count"    : 83,
     "relevancy"     : 4.6,
-    "type"			: "offline",
+    "type"      : "offline",
     "topic_pathname": "/occupy-wall-st.html"
   },
   {
@@ -32,7 +32,7 @@
     "src"           : "http://www.youtube.com/watch?feature=player_embedded&v=2JlxbKtBkGM",
     "user_count"    : 93,
     "relevancy"     : 4.1,
-    "type"			: "offline",
+    "type"          : "offline",
     "topic_pathname": "/occupy-wall-st.html"
   },
   {
@@ -41,7 +41,7 @@
     "src"           : "http://twibbon.com/join/i-support-occupy-wall-st",
     "user_count"    : 38,
     "relevancy"     : 3.7,
-    "type"			: "online",
+    "type"      : "online",
     "topic_pathname": "/occupy-wall-st.html"
   },
   {
@@ -50,7 +50,7 @@
     "src"           : "http://en.wikipedia.org/wiki/List_of_Occupy_movement_protest_locations",
     "user_count"    : 47,
     "relevancy"     : 3.8,
-    "type"			: "offline",
+    "type"          : "offline",
     "topic_pathname": "/occupy-wall-st.html"
   },
   {
@@ -59,7 +59,7 @@
     "src"           : "http://occupywallst.org/donate/",
     "user_count"    : 11,
     "relevancy"     : 3.2,
-    "type"			: "online",
+    "type"          : "online",
     "topic_pathname": "/occupy-wall-st.html"
   },
   {
@@ -164,7 +164,7 @@
     "src"           : "http://www.education.com/quiz/bullying-myths/",
     "user_count"    : 59,
     "relevancy"     : 3.1,
-	"type"			: "online",
+    "type"          : "online",
     "topic_pathname": "/stop-bullying.html"
   },
   {
@@ -173,7 +173,7 @@
     "src"           : "http://www.thetrevorproject.org/volunteers/opportunities",
     "user_count"    : 11,
     "relevancy"     : 3.2,
-	"type"			: "offline",
+    "type"          : "offline",
     "topic_pathname": "/stop-bullying.html"
   },
   {
@@ -182,7 +182,7 @@
     "src"           : "http://www.itgetsbetter.org",
     "user_count"    : 47,
     "relevancy"     : 3.8,
-	"type"			: "online",
+    "type"          : "online",
     "topic_pathname": "/stop-bullying.html"
   },
   {
@@ -191,7 +191,7 @@
     "src"           : "http://www.pacer.org/bullying/resources/activities/toolkits/petition-toolkit.asp",
     "user_count"    : 38,
     "relevancy"     : 3.7,
-	"type"			: "offline",
+    "type"          : "offline",
     "topic_pathname": "/stop-bullying.html"
   },
   {
@@ -200,7 +200,7 @@
     "src"           : "http://www.nonamecallingweek.org/cgi-bin/iowa/all/resources/record/112.html",
     "user_count"    : 83,
     "relevancy"     : 4.6,
-	"type"			: "offline",
+    "type"          : "offline",
     "topic_pathname": "/stop-bullying.html"
   },
   {
