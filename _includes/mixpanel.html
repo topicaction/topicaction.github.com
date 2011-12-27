@@ -1,13 +1,21 @@
+{% comment %}
+  I couldn't find a way to differentiate the environments
+  with liquid so for now this has to be changes manually.
+
+  Mixpanel tokens:
+    60bed0cdec1a5f84c74069a08a3d5d61 (dev)
+    36ce5f01b98cbe10137e1d222004401a (prod)
+{% endcomment %}
+{% assign mp_token  = '36ce5f01b98cbe10137e1d222004401a' %}
 
 <script type="text/javascript">
 var mpq = [];
-mpq.push(["init", "36ce5f01b98cbe10137e1d222004401a"]);
+mpq.push(["init", "{{ mp_token }}"]);
 (function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";
 b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+
 "//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];
 a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push(
 [f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links",
 "track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<
-	d.length;c++){mpq[d[c]]=e(d[c])}})();
+  d.length;c++){mpq[d[c]]=e(d[c])}})();
 </script>
-

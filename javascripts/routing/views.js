@@ -66,9 +66,13 @@
 
     didIt: function(event) {
       var $target = $(event.target);
+
       TA.user.mixpanel.track('clicked button', { text: $target.text() });
       $target.text('Done!');
       $('.btn.act-later-link').disableLink();   // disable other button
+
+      TA.AddAction.iDidIt(); // popup
+
       return false;
     },
 
