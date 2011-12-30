@@ -179,7 +179,7 @@
 
     render: function() {
       var self = this;
-      var html = _.template($("#wufoo-do-later-template").html(), { action: this.model });
+      var html = _.template($("#wufoo-do-later-template").html(), { action: this.model, cohort: TA.user.cohort });
       $.fancybox(html, { onClosed: this.onComplete });
       return this;
     }
